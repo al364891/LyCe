@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: 69aede4bc277ab14cb0aeab2628752cb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Camera
+    100002: //RootNode
+    100004: ForjadoBaja
+    100006: ForjadoSegunda
+    100008: ForjadoTecho
+    100010: ForjadoTejado
+    100012: Guardilla
+    100014: Lamp
+    100016: PlantaBaja
+    100018: Puertas
+    100020: SegundaPlanta
+    100022: Ventanas
+    400000: Camera
+    400002: //RootNode
+    400004: ForjadoBaja
+    400006: ForjadoSegunda
+    400008: ForjadoTecho
+    400010: ForjadoTejado
+    400012: Guardilla
+    400014: Lamp
+    400016: PlantaBaja
+    400018: Puertas
+    400020: SegundaPlanta
+    400022: Ventanas
+    2000000: Camera
+    2100000: Material.001
+    2100002: Material
+    2100004: Material.002
+    2100006: Material.006
+    2100008: MarcoVentana
+    2100010: Material.005
+    2100012: Material.004
+    2100014: Material.003
+    2300000: ForjadoBaja
+    2300002: ForjadoSegunda
+    2300004: ForjadoTecho
+    2300006: ForjadoTejado
+    2300008: Guardilla
+    2300010: PlantaBaja
+    2300012: Puertas
+    2300014: SegundaPlanta
+    2300016: Ventanas
+    3300000: ForjadoBaja
+    3300002: ForjadoSegunda
+    3300004: ForjadoTecho
+    3300006: ForjadoTejado
+    3300008: Guardilla
+    3300010: PlantaBaja
+    3300012: Puertas
+    3300014: SegundaPlanta
+    3300016: Ventanas
+    4300000: Puertas
+    4300002: Ventanas
+    4300004: ForjadoBaja
+    4300006: SegundaPlanta
+    4300008: PlantaBaja
+    4300010: Guardilla
+    4300012: ForjadoTejado
+    4300014: ForjadoTecho
+    4300016: ForjadoSegunda
+    10800000: Lamp
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
