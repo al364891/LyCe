@@ -8,6 +8,9 @@ ModelImporter:
     2100000: Material.001
     2100002: Material
     2100004: Material.002
+    2100006: Material.100
+    2100008: Material.099
+    2100010: Material.101
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
