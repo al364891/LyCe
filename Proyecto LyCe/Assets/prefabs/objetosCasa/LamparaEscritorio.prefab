@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4858453522165978}
   - component: {fileID: 33154954359503506}
   - component: {fileID: 23535295904027068}
+  - component: {fileID: 65494719761326866}
   m_Layer: 0
   m_Name: LamparaEscritorio
   m_TagString: Untagged
@@ -49,14 +50,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888607001787718}
-  m_LocalRotation: {x: -0, y: 0.49430755, z: -0, w: 0.86928713}
-  m_LocalPosition: {x: -111.89, y: 21.709581, z: -1.65}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: 0.8665812, z: -0, w: -0.49903616}
+  m_LocalPosition: {x: 30.317583, y: 11.372993, z: 26.708138}
+  m_LocalScale: {x: 0.7000003, y: 0.7, z: 0.7000003}
   m_Children:
   - {fileID: 4858453522165978}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 59.248, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 239.872, z: 0}
 --- !u!4 &4858453522165978
 Transform:
   m_ObjectHideFlags: 1
@@ -113,3 +114,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1087754726272040}
   m_Mesh: {fileID: 4300000, guid: 937e167abd73ad844a0e31f931c4248c, type: 3}
+--- !u!65 &65494719761326866
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087754726272040}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000005, y: 0.020000001, z: 0.11397711}
+  m_Center: {x: 4.173424e-17, y: -0.00000008940697, z: 0.046988323}

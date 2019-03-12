@@ -2332,6 +2332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4360322331891248}
+  - component: {fileID: 65422033773123096}
   m_Layer: 0
   m_Name: EstanteriaConLibros
   m_TagString: Untagged
@@ -8086,3 +8087,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943060548709154}
   m_Mesh: {fileID: 4300000, guid: 7dd423db05187f74b955545dd35f82b4, type: 3}
+--- !u!65 &65422033773123096
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896710959971478}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.358992, y: 27.514, z: 8.740819}
+  m_Center: {x: -5.5622478, y: 9.400052, z: -0.65013885}

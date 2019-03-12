@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4473859495717256}
   - component: {fileID: 33837492058872236}
   - component: {fileID: 23493300891200378}
+  - component: {fileID: 65683210118353296}
   m_Layer: 0
   m_Name: Jabon
   m_TagString: Untagged
@@ -49,14 +50,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1522713508048176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -86.44, y: 8.881, z: -67.34}
-  m_LocalScale: {x: 0.4, y: 0.35, z: 0.4}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -42.772415, y: -4.4200063, z: -19.128864}
+  m_LocalScale: {x: 0.40000024, y: 0.35, z: 0.40000024}
   m_Children:
   - {fileID: 4473859495717256}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4473859495717256
 Transform:
   m_ObjectHideFlags: 1
@@ -112,3 +113,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1776684321099400}
   m_Mesh: {fileID: 4300000, guid: 799e364b8859dc043b6a7bb84e1f9819, type: 3}
+--- !u!65 &65683210118353296
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776684321099400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000014, y: 0.042000007, z: 0.009999997}
+  m_Center: {x: -4.6566145e-10, y: 0.00000047683716, z: -0.0049999985}

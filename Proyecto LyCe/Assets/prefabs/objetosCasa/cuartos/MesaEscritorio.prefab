@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4156954993932508}
   - component: {fileID: 33377955632338596}
   - component: {fileID: 23994216471709076}
+  - component: {fileID: 65835057750621926}
   m_Layer: 0
   m_Name: mesaEscritorio
   m_TagString: Untagged
@@ -112,3 +113,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1197921287737198}
   m_Mesh: {fileID: 4300000, guid: a2334aae4bdd52d459e0ef5b1097b922, type: 3}
+--- !u!65 &65835057750621926
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1197921287737198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.038611453, y: 0.015591729, z: 0.014675558}
+  m_Center: {x: 0.0009010397, y: 0.0003093008, z: -0.0082527865}

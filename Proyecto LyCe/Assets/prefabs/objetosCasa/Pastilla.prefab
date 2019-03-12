@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4018581037404116}
+  - component: {fileID: 136897480040037868}
   m_Layer: 0
   m_Name: Pastilla
   m_TagString: Untagged
@@ -49,14 +50,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384908611691274}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -74.403, y: 5.677, z: -2.156}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalRotation: {x: -0.69195867, y: 0.054406796, z: -0.052435044, w: 0.717972}
+  m_LocalPosition: {x: 3.31, y: 2.97, z: -0.51}
+  m_LocalScale: {x: 1.666667, y: 1.6666666, z: 1.666667}
   m_Children:
   - {fileID: 4351286725588440}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -81.081, y: 76.396, z: -76.236}
 --- !u!4 &4351286725588440
 Transform:
   m_ObjectHideFlags: 1
@@ -113,3 +114,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1220901966315736}
   m_Mesh: {fileID: 4300000, guid: 3df3a140e230d754a8b28550513f4392, type: 3}
+--- !u!136 &136897480040037868
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1384908611691274}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4931460799941530}
   - component: {fileID: 33284378782109872}
   - component: {fileID: 23366219591305506}
+  - component: {fileID: 65942437909706484}
   m_Layer: 0
   m_Name: mesaNochePadres
   m_TagString: Untagged
@@ -49,8 +50,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1739346132992576}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.29, y: 16.85, z: -63.85866}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 37.37, y: 6.652994, z: -3.83}
   m_LocalScale: {x: 1, y: 1.2, z: 1.5}
   m_Children:
   - {fileID: 4931460799941530}
@@ -64,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644265749968924}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.03, y: 0, z: -0.16}
   m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
   m_Children: []
   m_Father: {fileID: 4714594082433590}
@@ -112,3 +113,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644265749968924}
   m_Mesh: {fileID: 4300000, guid: 85d3fed61ffc63d4399154b32271ed5e, type: 3}
+--- !u!65 &65942437909706484
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1644265749968924}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02319486, y: 0.02, z: 0.02141741}
+  m_Center: {x: -0.0006874935, y: 0.0012351385, z: 0.013110152}

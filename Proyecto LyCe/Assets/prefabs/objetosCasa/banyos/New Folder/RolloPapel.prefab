@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4870800912377050}
   - component: {fileID: 33472334091470004}
   - component: {fileID: 23213702902700404}
+  - component: {fileID: 136262075050735416}
   m_Layer: 0
   m_Name: RolloPapel
   m_TagString: Untagged
@@ -49,8 +50,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419334181675596}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -86.268, y: 8.765, z: -66.307}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -32.337418, y: -3.896006, z: -19.116863}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4870800912377050}
@@ -112,3 +113,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938498963000056}
   m_Mesh: {fileID: 4300000, guid: a0b50fdb50230244b8fd9729b5316ad6, type: 3}
+--- !u!136 &136262075050735416
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1938498963000056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.019999998
+  m_Height: 0.019999998
+  m_Direction: 1
+  m_Center: {x: 0, y: -7.105427e-17, z: 0.009999999}

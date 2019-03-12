@@ -7,9 +7,9 @@ public class PlayerMovement : MonoBehaviour {
     public bool isCrouching; //Indica si esta agachado
 
     private float speed; //Variable donde se guarda la velocidad de cada momento
-    private float w_speed = 0.5f; //Walking speed
-    private float l_speed = 0.25f; //Lateral speed
-    private float r_speed = 1f; //Running speed
+    private float w_speed = 0.2f; //Walking speed
+    private float l_speed = 0.15f; //Lateral speed
+    private float r_speed = 0.3f; //Running speed
     private float c_speed = 0.25f; //Crouching speed
     public float rotSpeed; //Velocidad de rotacion
 
@@ -113,4 +113,8 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 	}
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Player has collided with " + collision.collider.name);
+    }
 }

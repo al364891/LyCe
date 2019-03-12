@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4979574916085424}
   - component: {fileID: 33480448986579028}
   - component: {fileID: 23949594906529308}
+  - component: {fileID: 65867494236212420}
   m_Layer: 0
   m_Name: sillaChica
   m_TagString: Untagged
@@ -49,14 +50,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206117214632198}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.55, y: 17.126343, z: -21.776438}
+  m_LocalRotation: {x: -0, y: -0.57763684, z: -0, w: 0.81629395}
+  m_LocalPosition: {x: 36, y: 6.9293365, z: 31.76}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
   - {fileID: 4979574916085424}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -70.569, z: 0}
 --- !u!4 &4979574916085424
 Transform:
   m_ObjectHideFlags: 1
@@ -114,3 +115,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376196588426952}
   m_Mesh: {fileID: 4300000, guid: 9b259fc6847972b4e9841c8dde442a0f, type: 3}
+--- !u!65 &65867494236212420
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376196588426952}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0046060737, y: 0.003783618, z: 0.0075363186}
+  m_Center: {x: -0.009550999, y: -0.0016872187, z: 0.002387558}

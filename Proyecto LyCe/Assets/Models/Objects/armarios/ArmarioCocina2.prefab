@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4518928483015520}
   - component: {fileID: 33804757661210204}
   - component: {fileID: 23663035327564930}
+  - component: {fileID: 65940501592676828}
   m_Layer: 0
   m_Name: ArmarioCocina
   m_TagString: Untagged
@@ -113,3 +114,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146084104971298}
   m_Mesh: {fileID: 4300000, guid: 16843123bb7436f4cbf774f036f68d77, type: 3}
+--- !u!65 &65940501592676828
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146084104971298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11999998, y: 0.08023741, z: 0.13}
+  m_Center: {x: 0.19360574, y: 0.14560904, z: 0.27141756}

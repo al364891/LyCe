@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4392670981982486}
   - component: {fileID: 33465821427790712}
   - component: {fileID: 23439294659593254}
+  - component: {fileID: 65931635127141816}
   m_Layer: 0
   m_Name: ArmarioCocina
   m_TagString: Untagged
@@ -62,14 +63,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1086947719768770}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0049305, y: 30.256647, z: 9.737487}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -62.232414, y: 13.208443, z: 27.458138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4392670981982486}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &23439294659593254
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -86,7 +87,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100004, guid: 16843123bb7436f4cbf774f036f68d77, type: 3}
-  - {fileID: 2100000, guid: f20d67221c99196479cf7256f7f7766a, type: 2}
+  - {fileID: 2100000, guid: 6f9ac233687984141af6d72ba9e376ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,3 +114,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1245829755480294}
   m_Mesh: {fileID: 4300000, guid: 16843123bb7436f4cbf774f036f68d77, type: 3}
+--- !u!65 &65931635127141816
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245829755480294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12000002, y: 0.08023744, z: 0.12999998}
+  m_Center: {x: 0.19360574, y: 0.14560913, z: 0.27141753}

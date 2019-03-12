@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4233387613855790}
   - component: {fileID: 33767331663086996}
   - component: {fileID: 23549217830468608}
+  - component: {fileID: 65000769450279898}
   m_Layer: 0
   m_Name: LamparaTecho
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1471032910446202}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -69.84, y: 24.59, z: -50.83}
+  m_LocalPosition: {x: -8.19, y: 0.18, z: 6.63}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,3 +86,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1471032910446202}
   m_Mesh: {fileID: 4300000, guid: 0c0f24d542444884795e69b91a9efd7f, type: 3}
+--- !u!65 &65000769450279898
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471032910446202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.116, y: 0.115999974, z: 0.07629998}
+  m_Center: {x: 0.0000000037252903, y: -0.000000009313224, z: -0.03464999}
