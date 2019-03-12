@@ -14,18 +14,32 @@ public class PlayerMovement : MonoBehaviour {
     public float rotSpeed; //Velocidad de rotacion
     private float gravity = 20f;
     private Vector3 moveDir;
+    private bool lightOn = false;
+    private bool lanternTaked = true; //Esto es para cuando no hayas obtenido aún la linterna, que lo pondremos a false al empezar la partida y cuando se coja a true
 
     CharacterController controller;
     Animator anim;
+    public Light lantern;
 
 	// Use this for initialization
 	void Start () {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+
+        if (!lightOn) //Al empezar el juego la tendrás apagada
+            lantern.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        characterControll();
+
+        if (lanternTaked && Input.GetMouseButtonDown(1)) //Si tienes la linterna, lo que pasa cuando clickas en pantalla
+            CheckLantern();
+    }
+
+    private void characterControll()
+    {
         if (controller.isGrounded)
         {
             if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -46,10 +60,11 @@ public class PlayerMovement : MonoBehaviour {
                     controller.center = new Vector3(0, 0.5f, 0); //Cambia el centro del collider
                 }
             }
-                
+
             moveDir = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDir = transform.TransformDirection(moveDir);
             moveDir = moveDir * speed;
+
             if (isCrouching)
             {
                 //Controles agachado
@@ -126,11 +141,26 @@ public class PlayerMovement : MonoBehaviour {
                 }
             }
         }
+
         moveDir.y -= gravity * Time.deltaTime;
         controller.Move(moveDir * Time.deltaTime);
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Player has collided with " + collision.collider.name);
+    }
+
+    private void CheckLantern() //Aoaga o enciende la linterna
+    {
+        if (lightOn)
+        {
+            lightOn = false;
+            lantern.enabled = false;
+        } else
+        {
+            lightOn = true;
+            lantern.enabled = true;
+        }
     }
 }
