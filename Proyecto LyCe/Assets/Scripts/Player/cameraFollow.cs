@@ -14,15 +14,20 @@ public class cameraFollow : MonoBehaviour {
     //variables FINALES donde asignaremos las velocidades
     float h;
     float v;
+    float maxV;
 
     public float distanceToSee;
     RaycastHit whatIHit;
 
     void Start()
     {
+        maxV = 0;
+
         //nada que ver con el seguimiento de la cámara
         //con esto solo hago que no exista el ratón en la escena
         Cursor.visible = false;
+        //con esto el raton "siempre estará centrado en el centro de la pantalla"
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update ()
@@ -38,6 +43,19 @@ public class cameraFollow : MonoBehaviour {
         //para tener el resultado de "cuanto se ha movido" y "en que dirección"
         h = horizontalSpeed * Input.GetAxis("Mouse X");
         v = verticalSpeed * Input.GetAxis("Mouse Y");
+        maxV += v;
+
+        //miramos que la camara tenga un tope para mirar "hacia arriba y hacia abajo"
+        if (maxV > 90.0f)
+        {
+            maxV = 90;
+            v = 0.0f;
+        }
+        else if (maxV < -90.0f)
+        {
+            maxV = -90;
+            v = 0.0f;
+        }
 
         //aplicamos la rotación HORIZONTAL del PJ
         transform.Rotate(0, h, 0);
@@ -45,7 +63,7 @@ public class cameraFollow : MonoBehaviour {
         camera.transform.Rotate(-v, 0, 0);
     }
 
-    private void rayController()
+        private void rayController()
     {
         Debug.DrawRay(camera.transform.position, camera.transform.forward * distanceToSee, Color.magenta);
 

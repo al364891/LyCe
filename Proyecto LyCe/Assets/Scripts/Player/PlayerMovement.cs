@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-
+    
     public bool isCrouching; //Indica si esta agachado
+
+    public GameObject eyes;
 
     private float speed; //Variable donde se guarda la velocidad de cada momento
     private float w_speed = 8f; //Walking speed
@@ -50,6 +52,9 @@ public class PlayerMovement : MonoBehaviour {
                     anim.SetBool("Crouched", false);
                     controller.height = 2; //Modifica el tamano del collider para la nueva posicion
                     controller.center = new Vector3(0, 0.8f, 0); //Cambia el centro del collider
+
+                    //posición de la camara "de pie"
+                    eyes.transform.position = eyes.transform.parent.TransformPoint(0, 0, 0);
                 }
                 else //Te agachas
                 {
@@ -58,30 +63,24 @@ public class PlayerMovement : MonoBehaviour {
                     speed = c_speed; //Indica la velocidad que tendra agachado
                     controller.height = 1; //Modifica el tamano del collider para la nueva posicion
                     controller.center = new Vector3(0, 0.5f, 0); //Cambia el centro del collider
+
+                    //posición de la camara "agachada"
+                    eyes.transform.position = eyes.transform.parent.TransformPoint(0, -0.81f, 0.35f);
                 }
             }
 
             moveDir = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDir = transform.TransformDirection(moveDir);
             moveDir = moveDir * speed;
+            
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
 
-            if (isCrouching)
-            {
-                //Controles agachado
-                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) //Si se mueve
-                {
-                    anim.SetInteger("WalkDirection", 0);
-                    anim.SetFloat("Velocity", 1f);
-                }
-                else //Si esta quieto
-                {
-                    anim.SetInteger("WalkDirection", 0);
-                    anim.SetFloat("Velocity", 0f);
-                }
-            }
-            else if (Input.GetKey(KeyCode.LeftShift))
-            {
+                //posición de la camara "corriendo"
+                eyes.transform.position = eyes.transform.parent.TransformPoint(0, 0, 0.3f);
+
                 //Controles corriendo
+
                 if (Input.GetKey(KeyCode.W)) //Si se mueve hacia adelante
                 {
                     speed = r_speed;
@@ -110,36 +109,58 @@ public class PlayerMovement : MonoBehaviour {
                     anim.SetInteger("WalkDirection", 0);
                 }
             }
-            else if (!isCrouching)
+
+            else
             {
-                speed = w_speed;
-                //Controles de pie
-                if (Input.GetKey(KeyCode.W)) //Si se mueve hacia adelante
+                //posición de la camara cuando "no está corriendo"
+                eyes.transform.position = eyes.transform.parent.TransformPoint(0, 0, 0);
+
+                if (isCrouching)
                 {
-                    anim.SetInteger("WalkDirection", 0);
-                    anim.SetFloat("Velocity", 1f);
+                    //Controles agachado
+                    if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) //Si se mueve
+                    {
+                        anim.SetInteger("WalkDirection", 0);
+                        anim.SetFloat("Velocity", 1f);
+                    }
+                    else //Si esta quieto
+                    {
+                        anim.SetInteger("WalkDirection", 0);
+                        anim.SetFloat("Velocity", 0f);
+                    }
                 }
-                else if (Input.GetKey(KeyCode.S)) //Si se mueve hacia detras
+                else if (!isCrouching)
                 {
-                    anim.SetInteger("WalkDirection", 0);
-                    anim.SetFloat("Velocity", -1f);
-                }
-                else if (Input.GetKey(KeyCode.A)) //Si se mueve hacia su izquierda
-                {
-                    speed = l_speed;
-                    anim.SetInteger("WalkDirection", 1);
-                }
-                else if (Input.GetKey(KeyCode.D)) //Si se mueve hacia su derecha
-                {
-                    speed = l_speed;
-                    anim.SetInteger("WalkDirection", 2);
-                }
-                else //Si no se mueve
-                {
-                    anim.SetInteger("WalkDirection", 0);
-                    anim.SetFloat("Velocity", 0f);
+                    speed = w_speed;
+                    //Controles de pie
+                    if (Input.GetKey(KeyCode.W)) //Si se mueve hacia adelante
+                    {
+                        anim.SetInteger("WalkDirection", 0);
+                        anim.SetFloat("Velocity", 1f);
+                    }
+                    else if (Input.GetKey(KeyCode.S)) //Si se mueve hacia detras
+                    {
+                        anim.SetInteger("WalkDirection", 0);
+                        anim.SetFloat("Velocity", -1f);
+                    }
+                    else if (Input.GetKey(KeyCode.A)) //Si se mueve hacia su izquierda
+                    {
+                        speed = l_speed;
+                        anim.SetInteger("WalkDirection", 1);
+                    }
+                    else if (Input.GetKey(KeyCode.D)) //Si se mueve hacia su derecha
+                    {
+                        speed = l_speed;
+                        anim.SetInteger("WalkDirection", 2);
+                    }
+                    else //Si no se mueve
+                    {
+                        anim.SetInteger("WalkDirection", 0);
+                        anim.SetFloat("Velocity", 0f);
+                    }
                 }
             }
+            
         }
 
         moveDir.y -= gravity * Time.deltaTime;
