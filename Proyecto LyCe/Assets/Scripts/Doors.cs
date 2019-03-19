@@ -4,26 +4,14 @@ using UnityEngine;
 
 public class Doors : MonoBehaviour {
 
-    public enum Door {childDoor }
+    public enum Door {childDoor, pasilloChildDoor, banyo2Planta2, sisterDoor, parentsDoor, banyo1Planta2, recibidorDerecha, recibidorIzquierda, puertaSalon, puertaCocina, banyoPlanta1, puertaGaraje1, puertaGaraje2 }
     private bool opened = false;
     public Door whatDoorAmI;
 
-    Animator anim;
-    //public Camera camera;
-
-	// Use this for initialization
-	void Start () {
-        anim = GetComponent<Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Animator anim;
 
     public void controlDoor()
     {
-        Debug.Log("Eyy");
         if (!opened)
         {
             opened = true;

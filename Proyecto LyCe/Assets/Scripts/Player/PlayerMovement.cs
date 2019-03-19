@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour {
                     controller.center = new Vector3(0, 0.5f, 0); //Cambia el centro del collider
 
                     //posición de la camara "agachada"
-                    eyes.transform.position = eyes.transform.parent.TransformPoint(0, -0.81f, 0.35f);
+                    eyes.transform.position = eyes.transform.parent.TransformPoint(0, -0.65f, 0.4f);
                 }
             }
 
@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour {
             {
 
                 //posición de la camara "corriendo"
-                eyes.transform.position = eyes.transform.parent.TransformPoint(0, 0, 0.3f);
+                //eyes.transform.position = eyes.transform.parent.TransformPoint(0, 0, 0.3f);
 
                 //Controles corriendo
 
@@ -113,7 +113,7 @@ public class PlayerMovement : MonoBehaviour {
             else
             {
                 //posición de la camara cuando "no está corriendo"
-                eyes.transform.position = eyes.transform.parent.TransformPoint(0, 0, 0);
+                //eyes.transform.position = eyes.transform.parent.TransformPoint(0, 0, 0);
 
                 if (isCrouching)
                 {

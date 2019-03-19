@@ -18,6 +18,7 @@ public class cameraFollow : MonoBehaviour {
 
     public float distanceToSee;
     RaycastHit whatIHit;
+    public Inventory inventory;
 
     void Start()
     {
@@ -71,14 +72,112 @@ public class cameraFollow : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //Debug.Log("I touched " + whatIHit.collider.gameObject.name);
+                Debug.Log("I touched " + whatIHit.collider.gameObject.name);
                 if (whatIHit.collider.tag == "Puerta")
                 {
                     if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.childDoor)
                     {
                         // if () //En este if ira si el jugador tiene el ítem necesario para abrirlo, por ahora se abre siempre
                         whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
-                        Debug.Log("Hola");
+                    } else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.pasilloChildDoor)
+                    {
+                        if (inventory.hasChildBoxKey)
+                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.banyo2Planta2)
+                    {
+                        if (inventory.hasBanyo2Planta2Key)
+                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.sisterDoor)
+                    {
+                        whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.parentsDoor)
+                    {
+                        if (inventory.hasTenazasKey)
+                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.banyo1Planta2)
+                    {
+                        whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.recibidorDerecha)
+                    {
+                        if (inventory.hasAxeKey)
+                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.recibidorIzquierda)
+                    {
+                        if (inventory.hasGanzuaKey)
+                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.puertaSalon)
+                    {
+                        whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.puertaCocina)
+                    {
+                        whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.banyoPlanta1)
+                    {
+                        whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.puertaGaraje1)
+                    {
+                        whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.puertaGaraje2)
+                    {
+                        whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                    }
+                } else if (whatIHit.collider.tag == "ElementoClave")
+                {
+                    Debug.Log("Entra");
+                    if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.banyo2Planta2Key)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasBanyo2Planta2Key = true;
+                    } else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.childBoxKey)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasChildBoxKey = true;
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.ganchoKey)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasGanchoKey = true;
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.tenazasKey)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasTenazasKey = true;
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.ganzuaKey)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasGanzuaKey = true;
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.axeKey)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasAxeKey = true;
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.boxSalonKey)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasBoxSalonKey = true;
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.boxBuhardillaKey)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasBoxBuhardillaKey = true;
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.palancaKey)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasPalancaKey = true;
                     }
                 }
             }
