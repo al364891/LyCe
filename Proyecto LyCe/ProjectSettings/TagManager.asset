@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Puerta
   - ElementoClave
+  - Ladder
   layers:
   - Default
   - TransparentFX

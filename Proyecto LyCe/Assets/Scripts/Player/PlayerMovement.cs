@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour {
     private float speed; //Variable donde se guarda la velocidad de cada momento
     private float w_speed = 8f; //Walking speed
     private float l_speed = 7f; //Lateral speed
-    private float r_speed = 10f; //Running speed
+    private float r_speed = 15f; //Running speed
     private float c_speed = 5f; //Crouching speed
     public float rotSpeed; //Velocidad de rotacion
     private float gravity = 20f;
