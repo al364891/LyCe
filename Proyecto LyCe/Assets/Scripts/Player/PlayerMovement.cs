@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour {
     private float gravity = 20f;
     private Vector3 moveDir;
     private bool lightOn = false;
-    private bool lanternTaked = true; //Esto es para cuando no hayas obtenido aún la linterna, que lo pondremos a false al empezar la partida y cuando se coja a true
+    public bool lanternTaked = false; //Esto es para cuando no hayas obtenido aún la linterna, que lo pondremos a false al empezar la partida y cuando se coja a true
 
     CharacterController controller;
     Animator anim;

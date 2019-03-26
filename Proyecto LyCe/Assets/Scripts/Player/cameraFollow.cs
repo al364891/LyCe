@@ -18,6 +18,7 @@ public class cameraFollow : MonoBehaviour {
 
     public float distanceToSee;
     RaycastHit whatIHit;
+    PlayerMovement playerMovement;
     public Inventory inventory;
 
     void Start()
@@ -29,6 +30,7 @@ public class cameraFollow : MonoBehaviour {
         Cursor.visible = false;
         //con esto el raton "siempre estará centrado en el centro de la pantalla"
         Cursor.lockState = CursorLockMode.Locked;
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     void Update ()
@@ -132,14 +134,19 @@ public class cameraFollow : MonoBehaviour {
                     {
                         whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
                     }
+                    else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.ladder)
+                    {
+                        if (inventory.hasGanchoKey)
+                            whatIHit.collider.gameObject.GetComponent<Doors>().controlLadder();
+                    }
                 } else if (whatIHit.collider.tag == "ElementoClave")
                 {
-                    Debug.Log("Entra");
                     if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.banyo2Planta2Key)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasBanyo2Planta2Key = true;
-                    } else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.childBoxKey)
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.childBoxKey)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasChildBoxKey = true;
@@ -178,6 +185,23 @@ public class cameraFollow : MonoBehaviour {
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasPalancaKey = true;
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.lantern)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        playerMovement.lanternTaked = true;
+                    }
+                } else if (whatIHit.collider.tag == "Caja")
+                {
+                    if (whatIHit.collider.gameObject.GetComponent<Boxes>().whatBoxAmI == Boxes.Box.childBox)
+                    {
+                        whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
+                    } else if (whatIHit.collider.gameObject.GetComponent<Boxes>().whatBoxAmI == Boxes.Box.parentsBox)
+                    {
+                        whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
+                    } else if (whatIHit.collider.gameObject.GetComponent<Boxes>().whatBoxAmI == Boxes.Box.hallBox)
+                    {
+                        whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
                     }
                 }
             }
