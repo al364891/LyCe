@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 33253681437846344}
   - component: {fileID: 23696424730311350}
   - component: {fileID: 65099388955432748}
+  - component: {fileID: 114721533544560300}
   m_Layer: 0
   m_Name: espejo
   m_TagString: Untagged
@@ -814,7 +815,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100002, guid: 492f2f25e85ffac4fb5b8500c264dbaf, type: 3}
+  - {fileID: 2100000, guid: 071c5db4e8c4d9746ba20aa11bb99aa5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1156,6 +1157,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.010000013, y: 0.020000018, z: 0.07599999}
   m_Center: {x: 0.004999048, y: -0.00000071618706, z: 0.027999997}
+--- !u!114 &114721533544560300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166162551319524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127f02fbff17dc144a3ba6b356489a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DisablePixelLights: 1
+  m_TextureSize: 256
+  m_ClipPlaneOffset: 0.07
+  m_ReflectLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!136 &136126568662275258
 CapsuleCollider:
   m_ObjectHideFlags: 1
