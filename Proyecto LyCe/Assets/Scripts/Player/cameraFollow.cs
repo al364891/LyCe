@@ -8,13 +8,16 @@ public class cameraFollow : MonoBehaviour {
     public Camera camera;
 
     //variables publicas que harán las MODIFICACIONES en los giros verticales y horizontales
-    public float horizontalSpeed;
-    public float verticalSpeed;
+    public float horizontalSpeed=2.0f;
+    public float verticalSpeed=2.0f;
 
     //variables FINALES donde asignaremos las velocidades
     float h;
     float v;
     float maxV;
+
+    private float yaw = 0.0f;
+    private float pitch = 0.0f;
 
     public float distanceToSee;
     RaycastHit whatIHit;
@@ -44,26 +47,21 @@ public class cameraFollow : MonoBehaviour {
     {
         //h y v: velocidad de movimiento * eje X o Y
         //para tener el resultado de "cuanto se ha movido" y "en que dirección"
-        h = horizontalSpeed * Input.GetAxis("Mouse X");
-        v = verticalSpeed * Input.GetAxis("Mouse Y");
-        maxV += v;
+        yaw -= horizontalSpeed * Input.GetAxis("Mouse Y");
+        pitch += verticalSpeed * Input.GetAxis("Mouse X");
 
-        //miramos que la camara tenga un tope para mirar "hacia arriba y hacia abajo"
-        if (maxV > 90.0f)
+        if (yaw >= 90.0f)
         {
-            maxV = 90;
-            v = 0.0f;
-        }
-        else if (maxV < -90.0f)
+            yaw = 90.0f;
+        }else if (yaw <= -90.0f)
         {
-            maxV = -90;
-            v = 0.0f;
+            yaw = -90.0f;
         }
 
-        //aplicamos la rotación HORIZONTAL del PJ
-        transform.Rotate(0, h, 0);
-        //aplicamos la rotación VERTICAL de la cámara
-        camera.transform.Rotate(-v, 0, 0);
+        transform.eulerAngles = new Vector3 (0, pitch, 0);
+
+        camera.transform.eulerAngles = new Vector3(yaw, pitch, 0);
+
     }
 
         private void rayController()
