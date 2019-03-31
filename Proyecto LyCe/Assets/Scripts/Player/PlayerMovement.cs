@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
                     controller.center = new Vector3(0, 0.8f, 0); //Cambia el centro del collider
 
                     //posición de la camara "de pie"
-                    eyes.transform.position = eyes.transform.parent.TransformPoint(0, 0, 0);
+                    StartCoroutine(CameraUp());
                 }
                 else //Te agachas
                 {
@@ -65,7 +66,7 @@ public class PlayerMovement : MonoBehaviour {
                     controller.center = new Vector3(0, 0.5f, 0); //Cambia el centro del collider
 
                     //posición de la camara "agachada"
-                    eyes.transform.position = eyes.transform.parent.TransformPoint(0, -0.65f, 0.4f);
+                    StartCoroutine(CameraDown());
                 }
             }
 
@@ -165,6 +166,36 @@ public class PlayerMovement : MonoBehaviour {
 
         moveDir.y -= gravity * Time.deltaTime;
         controller.Move(moveDir * Time.deltaTime);
+    }
+
+    IEnumerator CameraDown()
+    {
+        float currentTime = 0.0f;
+        float normalizedDelta;
+        Vector3 initial = eyes.transform.position;
+
+        while (currentTime < 0.8f)
+        {
+            currentTime += Time.deltaTime;
+            normalizedDelta = currentTime / 0.8f;
+            eyes.transform.position = Vector3.Lerp(initial, eyes.transform.parent.TransformPoint(0, -0.65f, 0.4f), normalizedDelta);
+            yield return null;
+        }
+    }
+
+    IEnumerator CameraUp()
+    {
+        float currentTime = 0.0f;
+        float normalizedDelta;
+        Vector3 initial = eyes.transform.position;
+
+        while (currentTime < 1.0f)
+        {
+            currentTime += Time.deltaTime;
+            normalizedDelta = currentTime / 1.0f;
+            eyes.transform.position = Vector3.Lerp(initial, eyes.transform.parent.TransformPoint(0, 0, 0), normalizedDelta);
+            yield return null;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
