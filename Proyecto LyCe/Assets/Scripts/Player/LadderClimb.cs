@@ -8,10 +8,14 @@ public class LadderClimb : MonoBehaviour {
     public bool inside = false;
     private float heightFactor = 10f;
     private PlayerMovement playerMovement;
+    private bool animacion;
+
+    Animator anim;
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        anim = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider col)
@@ -20,6 +24,11 @@ public class LadderClimb : MonoBehaviour {
         {
             playerMovement.enabled = false;
             inside = !inside;
+            if (!animacion)
+            {
+                animacion = true;
+                playerMovement.anim.SetBool("Ladder", animacion);
+            }
         }
     }
 
@@ -29,6 +38,8 @@ public class LadderClimb : MonoBehaviour {
         {
             playerMovement.enabled = true;
             inside = !inside;
+            animacion = false;
+            playerMovement.anim.SetBool("Ladder", animacion);
         }
     }
 
