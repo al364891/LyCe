@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boxes : MonoBehaviour {
 
-    public enum Box { childBox, parentsBox, hallBox }
+    public enum Box { childBox, parentsBox, hallBox, buhardillaBox }
     private bool opened = false;
     public Box whatBoxAmI;
 

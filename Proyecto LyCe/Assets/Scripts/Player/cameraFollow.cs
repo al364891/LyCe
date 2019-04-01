@@ -24,6 +24,8 @@ public class cameraFollow : MonoBehaviour {
     PlayerMovement playerMovement;
     public Inventory inventory;
 
+    public GameObject candado;
+
     void Start()
     {
         maxV = 0;
@@ -64,7 +66,7 @@ public class cameraFollow : MonoBehaviour {
 
     }
 
-        private void rayController()
+    private void rayController()
     {
         Debug.DrawRay(camera.transform.position, camera.transform.forward * distanceToSee, Color.magenta);
 
@@ -81,7 +83,7 @@ public class cameraFollow : MonoBehaviour {
                         whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
                     } else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.pasilloChildDoor)
                     {
-                        if (inventory.hasChildBoxKey)
+                        if (inventory.hasPasilloChildKey)
                             whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.banyo2Planta2)
@@ -126,11 +128,17 @@ public class cameraFollow : MonoBehaviour {
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.puertaGaraje1)
                     {
-                        whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        if (inventory.hasSalonBoxKey)
+                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.puertaGaraje2)
                     {
-                        whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        if (inventory.hasAcidoKey)
+                        {
+                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                            if (candado != null)
+                                Destroy(candado);
+                        }
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.ladder)
                     {
@@ -189,17 +197,57 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         playerMovement.lanternTaked = true;
                     }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.salonBoxKey && inventory.salonBoxOpen)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasSalonBoxKey = true;
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.acidoKey && inventory.buhardillaBoxOpen)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasAcidoKey = true;
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.pasilloChildKey && inventory.childBoxOpen)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasPasilloChildKey = true;
+                    }
                 } else if (whatIHit.collider.tag == "Caja")
                 {
                     if (whatIHit.collider.gameObject.GetComponent<Boxes>().whatBoxAmI == Boxes.Box.childBox)
                     {
-                        whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
+                        if (inventory.hasChildBoxKey)
+                        {
+                            whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
+                            whatIHit.collider.enabled = false;
+                            inventory.childBoxOpen = true;
+                        }
                     } else if (whatIHit.collider.gameObject.GetComponent<Boxes>().whatBoxAmI == Boxes.Box.parentsBox)
                     {
-                        whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
+                        if (inventory.hasPalancaKey)
+                        {
+                            whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
+                            whatIHit.collider.enabled = false;
+                            inventory.parentsBoxOpen = true;
+                            //Falta modelar las llaves del coche
+                        }
                     } else if (whatIHit.collider.gameObject.GetComponent<Boxes>().whatBoxAmI == Boxes.Box.hallBox)
                     {
-                        whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
+                        if (inventory.hasBoxSalonKey)
+                        {
+                            whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
+                            whatIHit.collider.enabled = false;
+                            inventory.salonBoxOpen = true;
+                        }
+                    }
+                    else if (whatIHit.collider.gameObject.GetComponent<Boxes>().whatBoxAmI == Boxes.Box.buhardillaBox)
+                    {
+                        if (inventory.hasBoxBuhardillaKey)
+                        {
+                            whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
+                            whatIHit.collider.enabled = false;
+                            inventory.buhardillaBoxOpen = true;
+                        }
                     }
                 }
             }
