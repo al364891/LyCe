@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 99
+  controlID: 140
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 51
+  controlID: 33
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 52
+  controlID: 34
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 192}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 100
+  controlID: 141
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -422,9 +422,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 948bf9ff
-    m_LastClickedID: -423020
-    m_ExpandedIDs: b249fbffe6fbffff000000008a390000643a0000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: e6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -509,9 +509,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -88.962105, y: -32.173523, z: 22.23716}
+    m_Target: {x: -150.97578, y: -23.035965, z: -45.93318}
     speed: 2
-    m_Value: {x: -88.962105, y: -32.173523, z: 22.23716}
+    m_Value: {x: -150.97578, y: -23.035965, z: -45.93318}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -539,13 +539,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.21046005, y: 0.35546675, z: -0.08244088, w: -0.9069474}
+    m_Target: {x: -0.17929383, y: 0.61696374, z: -0.14703086, w: -0.7520582}
     speed: 2
-    m_Value: {x: -0.21046005, y: 0.35546675, z: -0.08244088, w: -0.9069474}
+    m_Value: {x: -0.17929381, y: 0.6169637, z: -0.14703085, w: -0.7520581}
   m_Size:
-    m_Target: 136.99223
+    m_Target: 110.760445
     speed: 2
-    m_Value: 136.99223
+    m_Value: 110.760445
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -619,20 +619,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Animations/Enemies/Padre
   m_ViewMode: 1
   m_StartGridSize: 54
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Animations/Enemies/Padre
   m_LastFoldersGridSize: 54
   m_LastProjectPath: C:\Users\USER\Desktop\Proyecto LyCe
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 323}
-    m_SelectedIDs: 822a0000
-    m_LastClickedID: 10882
-    m_ExpandedIDs: 00000000f42900007e2a0000822a00007e2b0000802b0000ec2c0000ee2c0000302d0000d42d0000ce310000da3100004649000000ca9a3b
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: c84b0000
+    m_LastClickedID: 19400
+    m_ExpandedIDs: 00000000f42900007e2a0000822a00007e2b0000802b0000ec2c0000ee2c0000302d0000dc2d0000d6310000e231000060490000c24b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -660,7 +660,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f42900007e2a0000822a00007e2b0000802b0000ec2c0000ee2c0000302d0000d42d0000ce31000046490000
+    m_ExpandedIDs: 00000000f42900007e2a0000822a00007e2b0000802b0000ec2c0000ee2c0000302d0000dc2d0000d6310000e231000060490000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -688,7 +688,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000242a0000d44a0000ea280000762900007a290000822900007e290000522a0000be2a0000d22a0000d62a0000ac290000a82900002e2a0000362a00004e160000be150100a64a0000f0560000c0440000fe350000762e0000561500002c4c0000961600005c8b0100ae0d0000801800001c4000006c500000920d000078170000dca20000782e000048980100feb400000e1c00009e3e0000d6440000663b0000e6ef0200f63b0000ec7e0600ae3c0000e28000004c06000010bf060018bf06005c5701004c2e0000523c00008c2d0000b4d70100d02e0000502e00000c3400008c8807000e440000fe4200000e400000cc3c00006c7d0000ee3f0000ac2f00003e3b0000c62f0000362e0000cc390000082e00000e3000007c390000e2260000b8410000e078ffffcc0d000020190000043f0000f43000004a390000b25400009a310000862e0000fe3a0000f6300000504000004a3a0000923d0000e63d000006540000882e0000483a0000b8550000c4550000c0550000bc550000ee9a0000c6520000d83300005c2a0000d6260000be2700001e460000a44d00000c0e0000500c00004a0c00003210000044380000e0390000cc3b0000349af3ff3c0d0000f83e0000ae3b0000000000000a4b0000
+    m_ExpandedInstanceIDs: c6230000242a0000d44a0000ea280000762900007a290000822900007e290000522a0000be2a0000d22a0000d62a0000ac290000a82900002e2a0000362a00004e160000be150100a64a0000f0560000c0440000fe350000762e0000561500002c4c0000961600005c8b0100ae0d0000801800001c4000006c500000920d000078170000dca20000782e000048980100feb400000e1c00009e3e0000d6440000663b0000e6ef0200f63b0000ec7e0600ae3c0000e28000004c06000010bf060018bf06005c5701004c2e0000523c00008c2d0000b4d70100d02e0000502e00000c3400008c8807000e440000fe4200000e400000cc3c00006c7d0000ee3f0000ac2f00003e3b0000362e0000cc390000082e00000e3000007c390000e2260000b8410000e078ffffcc0d000020190000043f0000f43000004a390000b25400009a310000862e0000fe3a0000f6300000504000004a3a0000923d0000e63d000006540000882e0000483a0000b8550000c4550000c0550000bc550000ee9a0000c6520000d83300005c2a0000d6260000be2700001e460000a44d00000c0e0000500c00004a0c00003210000044380000e0390000cc3b0000349af3ff3c0d0000f83e0000ae3b0000000000000a4b00003a2a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
