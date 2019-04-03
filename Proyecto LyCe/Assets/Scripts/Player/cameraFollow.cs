@@ -197,6 +197,11 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         playerMovement.lanternTaked = true;
                     }
+                    else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.carKeys)
+                    {
+                        Destroy(whatIHit.collider.gameObject);
+                        inventory.hasCarKeys = true;
+                    }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.salonBoxKey && inventory.salonBoxOpen)
                     {
                         Destroy(whatIHit.collider.gameObject);
@@ -229,7 +234,6 @@ public class cameraFollow : MonoBehaviour {
                             whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
                             whatIHit.collider.enabled = false;
                             inventory.parentsBoxOpen = true;
-                            //Falta modelar las llaves del coche
                         }
                     } else if (whatIHit.collider.gameObject.GetComponent<Boxes>().whatBoxAmI == Boxes.Box.hallBox)
                     {
