@@ -39,7 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4686372239957372}
   m_Layer: 0
-  m_Name: Armario
+  m_Name: armario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
