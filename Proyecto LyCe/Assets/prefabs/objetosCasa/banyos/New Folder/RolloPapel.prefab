@@ -9,16 +9,19 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1419334181675596}
+  m_RootGameObject: {fileID: 1899111111154986}
   m_IsPrefabAsset: 1
---- !u!1 &1419334181675596
+--- !u!1 &1255113592337390
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4199208242496468}
+  - component: {fileID: 4438982588153412}
+  - component: {fileID: 33941250883133366}
+  - component: {fileID: 23018679690670284}
+  - component: {fileID: 136585670115535230}
   m_Layer: 0
   m_Name: RolloPapel
   m_TagString: Untagged
@@ -26,17 +29,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1938498963000056
+--- !u!1 &1899111111154986
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4870800912377050}
-  - component: {fileID: 33472334091470004}
-  - component: {fileID: 23213702902700404}
-  - component: {fileID: 136262075050735416}
+  - component: {fileID: 4029756940054498}
   m_Layer: 0
   m_Name: RolloPapel
   m_TagString: Untagged
@@ -44,39 +44,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4199208242496468
+--- !u!4 &4029756940054498
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1419334181675596}
+  m_GameObject: {fileID: 1899111111154986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.337418, y: -3.896006, z: -19.116863}
+  m_LocalPosition: {x: -30.441, y: -3.896006, z: -19.116863}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
-  - {fileID: 4870800912377050}
+  - {fileID: 4438982588153412}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4870800912377050
+--- !u!4 &4438982588153412
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1938498963000056}
+  m_GameObject: {fileID: 1255113592337390}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
+  m_LocalPosition: {x: 0.18695831, y: 0.13, z: -0.21783829}
+  m_LocalScale: {x: 99.99996, y: 99.99984, z: 99.99985}
   m_Children: []
-  m_Father: {fileID: 4199208242496468}
+  m_Father: {fileID: 4029756940054498}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23213702902700404
+--- !u!23 &23018679690670284
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1938498963000056}
+  m_GameObject: {fileID: 1255113592337390}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,7 +86,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100002, guid: a0b50fdb50230244b8fd9729b5316ad6, type: 3}
+  - {fileID: 2100000, guid: a0b50fdb50230244b8fd9729b5316ad6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,23 +106,23 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33472334091470004
+--- !u!33 &33941250883133366
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1938498963000056}
+  m_GameObject: {fileID: 1255113592337390}
   m_Mesh: {fileID: 4300000, guid: a0b50fdb50230244b8fd9729b5316ad6, type: 3}
---- !u!136 &136262075050735416
+--- !u!136 &136585670115535230
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1938498963000056}
+  m_GameObject: {fileID: 1255113592337390}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.019999998
-  m_Height: 0.019999998
+  m_Radius: 0.019999996
+  m_Height: 0.019999996
   m_Direction: 1
-  m_Center: {x: 0, y: -7.105427e-17, z: 0.009999999}
+  m_Center: {x: 0, y: -0.00000047683716, z: 0.009999938}
