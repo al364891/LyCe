@@ -24,12 +24,26 @@ public class MainMenuBehaviour : MonoBehaviour {
     public void newGameFunc()
     {
         Debug.Log("newGame");
+        PlayerPrefs.SetInt("banyo2Planta2Key", 0);
+        PlayerPrefs.SetInt("childBoxKey", 0);
+        PlayerPrefs.SetInt("ganchoKey", 0);
+        PlayerPrefs.SetInt("tenazasKey", 0);
+        PlayerPrefs.SetInt("ganzuaKey", 0);
+        PlayerPrefs.SetInt("axeKey", 0);
+        PlayerPrefs.SetInt("boxSalonKey", 0);
+        PlayerPrefs.SetInt("boxBuhardillaKey", 0);
+        PlayerPrefs.SetInt("palancaKey", 0);
+        PlayerPrefs.SetInt("lantern", 0);
+        PlayerPrefs.SetInt("salonBoxKey", 0);
+        PlayerPrefs.SetInt("acidoKey", 0);
+        PlayerPrefs.SetInt("pasilloChildKey", 0);
         StartCoroutine(FadeOut(1.0f));
     }
 
     public void loadGameFunc()
     {
-        //Codigo para cargar partida
+        Debug.Log("loadGame");
+        StartCoroutine(FadeOut(1.0f));
     }
 
     public void optionsFunc()

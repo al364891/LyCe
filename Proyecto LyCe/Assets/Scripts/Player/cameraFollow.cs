@@ -151,71 +151,85 @@ public class cameraFollow : MonoBehaviour {
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasBanyo2Planta2Key = true;
+                        PlayerPrefs.SetInt("banyo2Planta2Key", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.childBoxKey)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasChildBoxKey = true;
+                        PlayerPrefs.SetInt("childBoxKey", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.ganchoKey)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasGanchoKey = true;
+                        PlayerPrefs.SetInt("ganchoKey", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.tenazasKey)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasTenazasKey = true;
+                        PlayerPrefs.SetInt("tenazasKey", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.ganzuaKey)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasGanzuaKey = true;
+                        PlayerPrefs.SetInt("ganzuaKey", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.axeKey)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasAxeKey = true;
+                        PlayerPrefs.SetInt("axeKey", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.boxSalonKey)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasBoxSalonKey = true;
+                        PlayerPrefs.SetInt("boxSalonKey", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.boxBuhardillaKey)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasBoxBuhardillaKey = true;
+                        PlayerPrefs.SetInt("boxBuhardillaKey", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.palancaKey)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasPalancaKey = true;
+                        PlayerPrefs.SetInt("palancaKey", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.lantern)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         playerMovement.lanternTaked = true;
+                        PlayerPrefs.SetInt("lantern", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.carKeys)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasCarKeys = true;
+                        //PlayerPrefs.SetInt("carKeys", 1);     Este objeto, al ser el último igual cunde no meterle autoguardado
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.salonBoxKey && inventory.salonBoxOpen)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasSalonBoxKey = true;
+                        PlayerPrefs.SetInt("salonBoxKey", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.acidoKey && inventory.buhardillaBoxOpen)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasAcidoKey = true;
+                        PlayerPrefs.SetInt("acidoKey", 1);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.pasilloChildKey && inventory.childBoxOpen)
                     {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasPasilloChildKey = true;
+                        PlayerPrefs.SetInt("pasilloChildKey", 1);
                     }
                 } else if (whatIHit.collider.tag == "Caja")
                 {

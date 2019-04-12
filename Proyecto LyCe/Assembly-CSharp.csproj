@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Environment\Doors.cs" />
      <Compile Include="Assets\Scripts\Environment\Inventory.cs" />
      <Compile Include="Assets\Scripts\Environment\KeyObjects.cs" />
+     <Compile Include="Assets\Scripts\Others\CargarPartida.cs" />
      <Compile Include="Assets\Scripts\Others\HudBehaviour.cs" />
      <Compile Include="Assets\Scripts\Others\MainMenuBehaviour.cs" />
      <Compile Include="Assets\Scripts\Others\Mirror.cs" />

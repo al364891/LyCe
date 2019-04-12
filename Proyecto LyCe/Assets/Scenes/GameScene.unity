@@ -2478,11 +2478,72 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a944484d55bc7b14695ac2f83dfe2c0a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &237140924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1360167047986848, guid: a944484d55bc7b14695ac2f83dfe2c0a,
+    type: 2}
+  m_PrefabInternal: {fileID: 237140923}
 --- !u!4 &246235877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4388318650277090, guid: f15c55b52569b36468e070e794152ae7,
     type: 2}
   m_PrefabInternal: {fileID: 2125816646}
+--- !u!1 &252263387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 252263389}
+  - component: {fileID: 252263388}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &252263388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 252263387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc5d0c180d54c1409d78a9f0beaeb75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 1970778988}
+  playerMovement: {fileID: 1058788156}
+  banyo2Key: {fileID: 1717015973}
+  childBoxKey: {fileID: 1642382763}
+  ganchoKey: {fileID: 604876529}
+  tenazasKey: {fileID: 1301580535}
+  ganzuaKey: {fileID: 147241835}
+  axeKey: {fileID: 268793852}
+  boxSalonKey: {fileID: 713920931}
+  boxBuhardillaKey: {fileID: 1451213845}
+  palancaKey: {fileID: 678750942}
+  lantern: {fileID: 608032830}
+  salonBoxKey: {fileID: 311964157}
+  acidoKey: {fileID: 773301267}
+  pasilloChildKey: {fileID: 1003022014}
+  escaleras: {fileID: 237140924}
+--- !u!4 &252263389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 252263387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -95.017426, y: 21.556206, z: -26.460735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &253428882
 GameObject:
   m_ObjectHideFlags: 0
@@ -12833,6 +12894,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f5041dfbd6d8704eba4acf47020d253, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1058788156 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114899940243148552, guid: 4f5041dfbd6d8704eba4acf47020d253,
+    type: 2}
+  m_PrefabInternal: {fileID: 1058788155}
+  m_Script: {fileID: 11500000, guid: 6a51dac2a205f1f418ee300d85ed36da, type: 3}
 --- !u!1 &1070523835 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 68349074024d4054d90526d77a9e8eab,
