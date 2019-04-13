@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class enemyController : MonoBehaviour {
-    /*
+    
     public float lookRadious = 10f;
 
     Transform target;
@@ -31,5 +31,5 @@ public class enemyController : MonoBehaviour {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadious);
     }
-    */
+    
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class playerManager : MonoBehaviour {
-    /*
+    
     #region Singleton
 
     public static playerManager instance;
@@ -14,7 +14,7 @@ public class playerManager : MonoBehaviour {
     }
 
     #endregion
-    */
+    
     public GameObject player;
     
 }
