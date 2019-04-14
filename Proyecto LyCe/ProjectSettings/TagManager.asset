@@ -8,6 +8,7 @@ TagManager:
   - ElementoClave
   - Ladder
   - Caja
+  - FinJuego
   layers:
   - Default
   - TransparentFX

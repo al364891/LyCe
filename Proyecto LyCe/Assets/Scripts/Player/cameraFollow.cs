@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class cameraFollow : MonoBehaviour {
 
@@ -26,6 +28,8 @@ public class cameraFollow : MonoBehaviour {
 
     public GameObject candado;
     public InformationText infoText;
+
+    public Image blackScreen;
 
     void Start()
     {
@@ -296,8 +300,33 @@ public class cameraFollow : MonoBehaviour {
                             inventory.buhardillaBoxOpen = true;
                         }
                     }
+                } else if (whatIHit.collider.tag== "FinJuego")
+                {
+                    if (inventory.hasCarKeys)
+                    {
+                        StartCoroutine(FadeOut(1.0f));
+
+                    }
                 }
             }
         }
+    }
+
+    IEnumerator FadeOut(float time)
+    {
+        Color initialColor = blackScreen.GetComponent<Image>().color;
+        Color c = initialColor;
+        blackScreen.gameObject.SetActive(true);
+        Color finalColor = new Color(0, 0, 0, 1);
+        float elapsedTime = 0.0f;
+        while (elapsedTime < time)
+        {
+            elapsedTime += Time.deltaTime;
+            c = Color.Lerp(initialColor, finalColor, elapsedTime / time);
+            blackScreen.GetComponent<Image>().color = c;
+            yield return null;
+        }
+        blackScreen.GetComponent<Image>().color = finalColor;
+        SceneManager.LoadScene(1);
     }
 }
