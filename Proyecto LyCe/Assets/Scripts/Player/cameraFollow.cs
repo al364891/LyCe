@@ -157,7 +157,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasBanyo2Planta2Key = true;
                         PlayerPrefs.SetInt("banyo2Planta2Key", 1);
-                        infoText.text.text = "You has taken the key for the bathroom!";
+                        infoText.text.text = "You have taken the key for the bathroom!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.childBoxKey)
@@ -165,7 +165,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasChildBoxKey = true;
                         PlayerPrefs.SetInt("childBoxKey", 1);
-                        infoText.text.text = "You has taken the key for the box of your room!";
+                        infoText.text.text = "You have taken the key for the box of your room!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.ganchoKey)
@@ -173,7 +173,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasGanchoKey = true;
                         PlayerPrefs.SetInt("ganchoKey", 1);
-                        infoText.text.text = "You has taken a hook!";
+                        infoText.text.text = "You have taken a hook!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.tenazasKey)
@@ -181,7 +181,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasTenazasKey = true;
                         PlayerPrefs.SetInt("tenazasKey", 1);
-                        infoText.text.text = "You has taken pincers!";
+                        infoText.text.text = "You have taken pincers!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.ganzuaKey)
@@ -189,7 +189,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasGanzuaKey = true;
                         PlayerPrefs.SetInt("ganzuaKey", 1);
-                        infoText.text.text = "You has taken a lock pick!";
+                        infoText.text.text = "You have taken a lock pick!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.axeKey)
@@ -197,7 +197,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasAxeKey = true;
                         PlayerPrefs.SetInt("axeKey", 1);
-                        infoText.text.text = "You has taken a axe!";
+                        infoText.text.text = "You have taken a axe!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.boxSalonKey)
@@ -205,7 +205,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasBoxSalonKey = true;
                         PlayerPrefs.SetInt("boxSalonKey", 1);
-                        infoText.text.text = "You has taken a key for the box of the living room!";
+                        infoText.text.text = "You have taken a key for the box of the living room!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.boxBuhardillaKey)
@@ -213,7 +213,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasBoxBuhardillaKey = true;
                         PlayerPrefs.SetInt("boxBuhardillaKey", 1);
-                        infoText.text.text = "You has taken a key for the attic!";
+                        infoText.text.text = "You have taken a key for the attic!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.palancaKey)
@@ -221,7 +221,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasPalancaKey = true;
                         PlayerPrefs.SetInt("palancaKey", 1);
-                        infoText.text.text = "You has taken a lever!";
+                        infoText.text.text = "You have taken a lever!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.lantern)
@@ -229,7 +229,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         playerMovement.lanternTaked = true;
                         PlayerPrefs.SetInt("lantern", 1);
-                        infoText.text.text = "You has taken the lantern!";
+                        infoText.text.text = "You have taken the lantern!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.carKeys)
@@ -237,7 +237,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasCarKeys = true;
                         //PlayerPrefs.SetInt("carKeys", 1);     Este objeto, al ser el último igual cunde no meterle autoguardado
-                        infoText.text.text = "You has taken the car keys!";
+                        infoText.text.text = "You have taken the car keys!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.salonBoxKey && inventory.salonBoxOpen)
@@ -245,7 +245,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasSalonBoxKey = true;
                         PlayerPrefs.SetInt("salonBoxKey", 1);
-                        infoText.text.text = "You has taken a key for the living room!";
+                        infoText.text.text = "You have taken a key for the living room!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.acidoKey && inventory.buhardillaBoxOpen)
@@ -253,7 +253,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasAcidoKey = true;
                         PlayerPrefs.SetInt("acidoKey", 1);
-                        infoText.text.text = "You has taken an acid canister!";
+                        infoText.text.text = "You have taken an acid canister!";
                         infoText.showText();
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.pasilloChildKey && inventory.childBoxOpen)
@@ -261,7 +261,7 @@ public class cameraFollow : MonoBehaviour {
                         Destroy(whatIHit.collider.gameObject);
                         inventory.hasPasilloChildKey = true;
                         PlayerPrefs.SetInt("pasilloChildKey", 1);
-                        infoText.text.text = "You has taken a key for the corridor!";
+                        infoText.text.text = "You have taken a key for the corridor!";
                         infoText.showText();
                     }
                 } else if (whatIHit.collider.tag == "Caja")
