@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class enemyController : MonoBehaviour {
+    //ESTE SCRIPT: es para el radio en el que te puede "ver" el padre
     
     public float lookRadious = 10f;
 
