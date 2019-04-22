@@ -19,6 +19,10 @@ public class enemyController : MonoBehaviour {
     Transform target;
     NavMeshAgent agent;
 
+    [HideInInspector] public Animator anim;
+
+    float velocity;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -27,11 +31,23 @@ public class enemyController : MonoBehaviour {
 
         target = playerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         float distance = Vector3.Distance(target.position, transform.position);
+
+        velocity = agent.velocity.magnitude;
+        if(velocity > 0)
+        {
+            anim.SetFloat("Speed", 7.0f);
+        }
+        else
+        {
+            anim.SetFloat("Speed", 0.0f);
+        }
 
         if (distance <= lookRadious)
         {
@@ -80,7 +96,9 @@ public class enemyController : MonoBehaviour {
     {
         life_player.life -= damage;
         salida = false;
+        anim.SetBool("Attacking", true);
         yield return new WaitForSeconds(wait_seconds);
+        anim.SetBool("Attacking", false);
         salida = true;
     }
 }
