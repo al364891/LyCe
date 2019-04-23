@@ -81,6 +81,7 @@ public class enemyController : MonoBehaviour {
     IEnumerator Damage_enemy()
     {
         life_player.life -= damage;
+        life_player.changeDamageImage();
         salida = false;
         anim.SetBool("Attacking", true);
         yield return new WaitForSeconds(wait_damage_seconds);
