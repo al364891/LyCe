@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23105,7 +23105,7 @@ MonoBehaviour:
   player: {fileID: 1970778987}
   lookRadious: 14.1
   damage: 1
-  wait_seconds: 2
+  wait_damage_seconds: 2
   anim: {fileID: 0}
 --- !u!54 &1782590883
 Rigidbody:
@@ -23166,6 +23166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44fb6ebb5db69340a49b98f0e1f69ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wait_seconds: 2
   padre: {fileID: 1782590884}
   puntos:
   - {fileID: 2013459863}

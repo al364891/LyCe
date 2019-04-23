@@ -8,6 +8,7 @@ public class IA : MonoBehaviour
     //simplemente crear un GameObject como punto de referencia de donde quieres ir
     //y pasarlo a lista "puntos" de este script
 
+    public int wait_seconds;
     public UnityEngine.AI.NavMeshAgent padre;
     public List<GameObject> puntos;
     List<Vector3> puntosUtiles;
@@ -17,9 +18,10 @@ public class IA : MonoBehaviour
     float posPadreX, posPadreZ;
     float posX, posZ;
 
-    public Vector3 pDestino;
+    [HideInInspector] public Vector3 pDestino;
     Vector3 pAux;
 
+    bool espera = false;
 
     void Start ()
     {
@@ -44,7 +46,7 @@ public class IA : MonoBehaviour
         posPadreX = padre.transform.position.x;
         posPadreZ = padre.transform.position.z;
 
-
+        /*
         if ((posPadreX == posX) && (posPadreZ == posZ))
         {
             pAux = pDestino;
@@ -56,15 +58,67 @@ public class IA : MonoBehaviour
             posZ = pDestino.z;
 
             padre.SetDestination(pDestino);
+            
+        }*/
 
-            /*Debug.Log("LISTA:"+puntosUtiles+"\n");
-            for(int i=0; i<puntosUtiles.Count; i++)
+
+        /*
+        if ((posPadreX == posX) && (posPadreZ == posZ))
+        {
+            if (espera == false)
             {
-                Debug.Log("++++++++++++++++++");
-                Debug.Log("punto["+i+"]X: " + puntosUtiles[i].x);
-                Debug.Log("punto[" + i + "]Y: " + puntosUtiles[i].y);
-                Debug.Log("punto[" + i + "]Z: " + puntosUtiles[i].z);
-            }*/
+                StartCoroutine(Wait_enemy());
+            }
+            else
+            {
+                //Debug.Log("bool1: " + espera);
+                espera = false;
+
+                pAux = pDestino;
+                puntosUtiles.RemoveAt(0);
+                puntosUtiles.Add(pAux);
+                pDestino = puntosUtiles[0];
+
+                posX = pDestino.x;
+                posZ = pDestino.z;
+
+                padre.SetDestination(pDestino);
+                //Debug.Log("bool2: " + espera);
+            }
+        }*/
+
+
+        if (espera == false)
+        {
+            if ((posPadreX == posX) && (posPadreZ == posZ))
+            {
+                StartCoroutine(Wait_enemy());
+            }
+        }
+        else
+        {
+            if ((posPadreX == posX) && (posPadreZ == posZ))
+            {
+                pAux = pDestino;
+                puntosUtiles.RemoveAt(0);
+                puntosUtiles.Add(pAux);
+                pDestino = puntosUtiles[0];
+
+                posX = pDestino.x;
+                posZ = pDestino.z;
+                
+            }
+            padre.SetDestination(pDestino);
+            espera = false;
         }
     }
+
+    IEnumerator Wait_enemy()
+    {
+        yield return new WaitForSeconds(wait_seconds);
+        espera = true;
+    }
+
 }
+
+

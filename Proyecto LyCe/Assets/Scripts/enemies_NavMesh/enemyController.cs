@@ -13,7 +13,7 @@ public class enemyController : MonoBehaviour {
 
     public float lookRadious = 10f;
     public int damage;
-    public int wait_seconds;
+    public int wait_damage_seconds;
     bool salida = true;
 
     Transform target;
@@ -97,7 +97,7 @@ public class enemyController : MonoBehaviour {
         life_player.life -= damage;
         salida = false;
         anim.SetBool("Attacking", true);
-        yield return new WaitForSeconds(wait_seconds);
+        yield return new WaitForSeconds(wait_damage_seconds);
         anim.SetBool("Attacking", false);
         salida = true;
     }
