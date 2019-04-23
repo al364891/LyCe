@@ -29,7 +29,9 @@ public class cameraFollow : MonoBehaviour {
     public GameObject candado;
     public InformationText infoText;
 
-    public Image blackScreen;
+    public HudBehaviour hud;
+
+    public PauseMenuBehaviour pauseMenu;
 
     void Start()
     {
@@ -304,29 +306,13 @@ public class cameraFollow : MonoBehaviour {
                 {
                     if (inventory.hasCarKeys)
                     {
-                        StartCoroutine(FadeOut(1.0f));
-
+                        pauseMenu.enabled = false;
+                        playerMovement.enabled = false;
+                        hud.FadeOut();
+                        hud.showFinalInfo();
                     }
                 }
             }
+            }
         }
     }
-
-    IEnumerator FadeOut(float time)
-    {
-        Color initialColor = blackScreen.GetComponent<Image>().color;
-        Color c = initialColor;
-        blackScreen.gameObject.SetActive(true);
-        Color finalColor = new Color(0, 0, 0, 1);
-        float elapsedTime = 0.0f;
-        while (elapsedTime < time)
-        {
-            elapsedTime += Time.deltaTime;
-            c = Color.Lerp(initialColor, finalColor, elapsedTime / time);
-            blackScreen.GetComponent<Image>().color = c;
-            yield return null;
-        }
-        blackScreen.GetComponent<Image>().color = finalColor;
-        SceneManager.LoadScene(1);
-    }
-}

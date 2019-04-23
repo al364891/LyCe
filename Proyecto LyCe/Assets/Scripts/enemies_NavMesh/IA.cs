@@ -18,10 +18,12 @@ public class IA : MonoBehaviour
     float posPadreX, posPadreZ;
     float posX, posZ;
 
-    [HideInInspector] public Vector3 pDestino;
+    public Vector3 pDestino;
     Vector3 pAux;
 
     bool espera = false;
+
+    Animator anim;
 
     void Start ()
     {
@@ -38,6 +40,8 @@ public class IA : MonoBehaviour
         posZ = pDestino.z;
 
         padre.SetDestination(pDestino);
+
+        anim = GetComponent<Animator>();
     }
 	
 
@@ -106,15 +110,17 @@ public class IA : MonoBehaviour
 
                 posX = pDestino.x;
                 posZ = pDestino.z;
-                
+
             }
             padre.SetDestination(pDestino);
             espera = false;
+            anim.SetFloat("Speed", 7.0f);
         }
     }
 
     IEnumerator Wait_enemy()
     {
+        anim.SetFloat("Speed", 0.0f);
         yield return new WaitForSeconds(wait_seconds);
         espera = true;
     }

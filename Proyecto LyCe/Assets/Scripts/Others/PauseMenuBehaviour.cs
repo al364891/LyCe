@@ -73,7 +73,7 @@ public class PauseMenuBehaviour : MonoBehaviour
             playerMovement.enabled = false;
             cameraFollow.enabled = false;
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
             return true;
         }
     }

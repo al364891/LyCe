@@ -21,8 +21,6 @@ public class enemyController : MonoBehaviour {
 
     [HideInInspector] public Animator anim;
 
-    float velocity;
-
 	// Use this for initialization
 	void Start ()
     {
@@ -38,16 +36,6 @@ public class enemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float distance = Vector3.Distance(target.position, transform.position);
-
-        velocity = agent.velocity.magnitude;
-        if(velocity > 0)
-        {
-            anim.SetFloat("Speed", 7.0f);
-        }
-        else
-        {
-            anim.SetFloat("Speed", 0.0f);
-        }
 
         if (distance <= lookRadious)
         {
@@ -66,8 +54,6 @@ public class enemyController : MonoBehaviour {
                 {
                     if (salida)
                     {
-                        /*life_player.life -= Time.deltaTime;
-                        Debug.Log("vida: " + life_player.life);*/
                         //Damage();
                         StartCoroutine(Damage_enemy());
                         Debug.Log("vida: " + life_player.life);
