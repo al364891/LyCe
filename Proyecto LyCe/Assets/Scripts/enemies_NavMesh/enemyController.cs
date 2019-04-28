@@ -68,7 +68,7 @@ public class enemyController : MonoBehaviour {
         }
         else
         {
-            IA.padre.SetDestination(IA.pDestino);
+            IA.enemy.SetDestination(IA.pDestino);
         }
 	}
 

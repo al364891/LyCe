@@ -9,7 +9,7 @@ public class IA : MonoBehaviour
     //y pasarlo a lista "puntos" de este script
 
     public int wait_seconds;
-    public UnityEngine.AI.NavMeshAgent padre;
+    public UnityEngine.AI.NavMeshAgent enemy;
     public List<GameObject> puntos;
     List<Vector3> puntosUtiles;
     Vector3 puntosTemp;
@@ -18,7 +18,7 @@ public class IA : MonoBehaviour
     float posPadreX, posPadreZ;
     float posX, posZ;
 
-    public Vector3 pDestino;
+    [HideInInspector] public Vector3 pDestino;
     Vector3 pAux;
 
     bool espera = false;
@@ -39,7 +39,7 @@ public class IA : MonoBehaviour
         posX = pDestino.x;
         posZ = pDestino.z;
 
-        padre.SetDestination(pDestino);
+        enemy.SetDestination(pDestino);
 
         anim = GetComponent<Animator>();
     }
@@ -47,8 +47,8 @@ public class IA : MonoBehaviour
 
 	void Update ()
     {
-        posPadreX = padre.transform.position.x;
-        posPadreZ = padre.transform.position.z;
+        posPadreX = enemy.transform.position.x;
+        posPadreZ = enemy.transform.position.z;
 
         /*
         if ((posPadreX == posX) && (posPadreZ == posZ))
@@ -112,7 +112,7 @@ public class IA : MonoBehaviour
                 posZ = pDestino.z;
 
             }
-            padre.SetDestination(pDestino);
+            enemy.SetDestination(pDestino);
             espera = false;
             anim.SetFloat("Speed", 7.0f);
         }
