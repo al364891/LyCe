@@ -21,6 +21,13 @@ public class enemyController : MonoBehaviour {
 
     [HideInInspector] public Animator anim;
 
+    public float viewRadius;
+    public float viewAngle;
+
+    public LayerMask targetMask;
+    public LayerMask obstacleMask;
+
+    public List<Transform> visibleTargets = new List<Transform>();
 	// Use this for initialization
 	void Start ()
     {
@@ -36,8 +43,9 @@ public class enemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float distance = Vector3.Distance(target.position, transform.position);
+        FindVisibleTargets();
 
-        if (distance <= lookRadious)
+        if (visibleTargets.Count>0)
         {
             if(distance > 5)
             {
@@ -72,12 +80,48 @@ public class enemyController : MonoBehaviour {
         }
 	}
 
-    private void OnDrawGizmosSelected()
+    void FindVisibleTargets()
+    {
+        visibleTargets.Clear();
+        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
+
+        for(int i=0; i<targetsInViewRadius.Length; i++)
+        {
+            Transform target = targetsInViewRadius[i].transform;
+            Vector3 dirToTarget = (target.position - transform.position).normalized;
+            if(Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
+            {
+                float distToTarget = Vector3.Distance(transform.position, target.position);
+
+                if (!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
+                {
+                    visibleTargets.Add(target);
+                }
+            }
+        }
+    }
+
+    public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
+    {
+        if (!angleIsGlobal)
+        {
+            angleInDegrees += transform.eulerAngles.y;
+        }
+        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+    }
+
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadious);
+        Gizmos.DrawWireSphere(transform.position, viewRadius);
+        
+        Vector3 viewAngleA = DirFromAngle(-viewAngle/2, false);
+        Vector3 viewAngleB = DirFromAngle(viewAngle / 2, false);
+
+        Gizmos.DrawLine(transform.position, transform.position + viewAngleA * viewRadius);
+        Gizmos.DrawLine(transform.position, transform.position + viewAngleB * viewRadius);
     }
-    
+
     IEnumerator Damage_enemy()
     {
         life_player.life -= damage;

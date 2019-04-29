@@ -18,7 +18,7 @@ public class IA : MonoBehaviour
     float posPadreX, posPadreZ;
     float posX, posZ;
 
-    [HideInInspector] public Vector3 pDestino;
+    public Vector3 pDestino;
     Vector3 pAux;
 
     bool espera = false;
@@ -49,35 +49,9 @@ public class IA : MonoBehaviour
     {
         posPadreX = enemy.transform.position.x;
         posPadreZ = enemy.transform.position.z;
-
-        /*
-        if ((posPadreX == posX) && (posPadreZ == posZ))
-        {
-            pAux = pDestino;
-            puntosUtiles.RemoveAt(0);
-            puntosUtiles.Add(pAux);
-            pDestino = puntosUtiles[0];
-
-            posX = pDestino.x;
-            posZ = pDestino.z;
-
-            padre.SetDestination(pDestino);
-            
-        }*/
-
-
-        /*
-        if ((posPadreX == posX) && (posPadreZ == posZ))
-        {
-            if (espera == false)
+            /*
+            if ((posPadreX == posX) && (posPadreZ == posZ))
             {
-                StartCoroutine(Wait_enemy());
-            }
-            else
-            {
-                //Debug.Log("bool1: " + espera);
-                espera = false;
-
                 pAux = pDestino;
                 puntosUtiles.RemoveAt(0);
                 puntosUtiles.Add(pAux);
@@ -87,12 +61,37 @@ public class IA : MonoBehaviour
                 posZ = pDestino.z;
 
                 padre.SetDestination(pDestino);
-                //Debug.Log("bool2: " + espera);
-            }
-        }*/
+
+            }*/
 
 
-        if (espera == false)
+            /*
+            if ((posPadreX == posX) && (posPadreZ == posZ))
+            {
+                if (espera == false)
+                {
+                    StartCoroutine(Wait_enemy());
+                }
+                else
+                {
+                    //Debug.Log("bool1: " + espera);
+                    espera = false;
+
+                    pAux = pDestino;
+                    puntosUtiles.RemoveAt(0);
+                    puntosUtiles.Add(pAux);
+                    pDestino = puntosUtiles[0];
+
+                    posX = pDestino.x;
+                    posZ = pDestino.z;
+
+                    padre.SetDestination(pDestino);
+                    //Debug.Log("bool2: " + espera);
+                }
+            }*/
+
+
+            if (espera == false)
         {
             if ((posPadreX == posX) && (posPadreZ == posZ))
             {
