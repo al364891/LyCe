@@ -72,6 +72,7 @@ public class HudBehaviour : MonoBehaviour {
 
     IEnumerator showInfo()
     {
+        gameName.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         Color initialColor = gameName.color;
         Color c = initialColor;
@@ -85,6 +86,7 @@ public class HudBehaviour : MonoBehaviour {
             yield return null;
         }
         gameName.color = finalColor;
+        studioName.gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
         elapsedTime = 0.0f;
         while (elapsedTime < 1.0f)
@@ -95,6 +97,7 @@ public class HudBehaviour : MonoBehaviour {
             yield return null;
         }
         studioName.color = finalColor;
+        members.gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
         elapsedTime = 0.0f;
         while (elapsedTime < 1.0f)
