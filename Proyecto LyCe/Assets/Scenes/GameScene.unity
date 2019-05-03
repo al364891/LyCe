@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.0039957035, g: 0.00021792634, b: 0.000000051515347,
+    a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -803,11 +804,11 @@ MonoBehaviour:
   damage: 75
   wait_damage_seconds: 2
   anim: {fileID: 0}
-  viewRadius: 0
-  viewAngle: 0
+  viewRadius: 17.79
+  viewAngle: 57.2
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
@@ -9071,7 +9072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &577973136
 Light:
   m_ObjectHideFlags: 0
@@ -10955,7 +10956,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 96c07631039e3734d9fcedb6f88703eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75f362d21def25d44930004a218cee34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18075,7 +18076,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4565270199657704, guid: 4f5041dfbd6d8704eba4acf47020d253, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -64.19
+      value: -101.78
       objectReference: {fileID: 0}
     - target: {fileID: 4565270199657704, guid: 4f5041dfbd6d8704eba4acf47020d253, type: 2}
       propertyPath: m_LocalPosition.y
@@ -18083,7 +18084,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4565270199657704, guid: 4f5041dfbd6d8704eba4acf47020d253, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -51.33
+      value: -16.6
       objectReference: {fileID: 0}
     - target: {fileID: 4565270199657704, guid: 4f5041dfbd6d8704eba4acf47020d253, type: 2}
       propertyPath: m_LocalRotation.x
@@ -23308,14 +23309,14 @@ MonoBehaviour:
   damage: 75
   wait_damage_seconds: 2
   anim: {fileID: 0}
-  viewRadius: 0
-  viewAngle: 0
+  viewRadius: 17.79
+  viewAngle: 57.2
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   visibleTargets: []
 --- !u!54 &1399769693
 Rigidbody:

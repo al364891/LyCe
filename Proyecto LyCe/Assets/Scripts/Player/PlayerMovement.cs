@@ -34,11 +34,14 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         characterControll();
 
         if (lanternTaked && Input.GetMouseButtonDown(1)) //Si tienes la linterna, lo que pasa cuando clickas en pantalla
             CheckLantern();
+
+        if (lightOn)
+            estropearLinterna();
     }
 
     private void characterControll()
@@ -214,5 +217,32 @@ public class PlayerMovement : MonoBehaviour {
             lightOn = true;
             lantern.enabled = true;
         }
+    }
+
+    private void estropearLinterna()
+    {
+        float valor = UnityEngine.Random.Range(0.0f, 1.0f);
+        if (valor < 0.001f)
+        {
+            lightOn = false;
+            lanternTaked = false;
+            StartCoroutine(parpadeoLuz());
+        }
+    }
+
+    IEnumerator parpadeoLuz()
+    {
+        lantern.enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        lantern.enabled = true;
+        yield return new WaitForSeconds(0.25f);
+        lantern.enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        lantern.enabled = true;
+        yield return new WaitForSeconds(0.25f);
+        lantern.enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        lanternTaked = true;
+        yield return null;
     }
 }
