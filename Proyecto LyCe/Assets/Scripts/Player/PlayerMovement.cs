@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour {
     
     public bool isCrouching; //Indica si esta agachado
 
+    public bool isRunning;
+
     public GameObject eyes;
 
     private float speed; //Variable donde se guarda la velocidad de cada momento
@@ -79,7 +81,7 @@ public class PlayerMovement : MonoBehaviour {
             
             if (Input.GetKey(KeyCode.LeftShift))
             {
-
+                isRunning = true;
                 //posición de la camara "corriendo"
                 //eyes.transform.position = eyes.transform.parent.TransformPoint(0, 0, 0.3f);
 
@@ -116,6 +118,7 @@ public class PlayerMovement : MonoBehaviour {
 
             else
             {
+                isRunning = false;
                 //posición de la camara cuando "no está corriendo"
                 //eyes.transform.position = eyes.transform.parent.TransformPoint(0, 0, 0);
 

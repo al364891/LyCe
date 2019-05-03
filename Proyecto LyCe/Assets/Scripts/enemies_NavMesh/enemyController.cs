@@ -28,6 +28,8 @@ public class enemyController : MonoBehaviour {
     public LayerMask obstacleMask;
 
     public List<Transform> visibleTargets = new List<Transform>();
+
+    public PlayerMovement playerMovement;
 	// Use this for initialization
 	void Start ()
     {
@@ -38,12 +40,28 @@ public class enemyController : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
 
         anim = GetComponent<Animator>();
+
+        viewRadius = 18;
+        viewAngle = 60;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         float distance = Vector3.Distance(target.position, transform.position);
         FindVisibleTargets();
+
+        if (playerMovement.isCrouching)
+        {
+            viewRadius = 10;
+        }
+        else if (playerMovement.isRunning)
+        {
+            viewRadius = 26;
+        }
+        else
+        {
+            viewRadius = 18;
+        }
 
         if (visibleTargets.Count>0)
         {
