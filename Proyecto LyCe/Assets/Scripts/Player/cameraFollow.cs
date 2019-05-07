@@ -6,6 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class cameraFollow : MonoBehaviour {
 
+    public AudioClip doorOpen;
+    public AudioClip doorClose;
+    public AudioClip key;
+    public AudioClip box;
+    AudioSource audioSource;
+
+    bool controlCloseDoor = false;
+    bool controlOpenDoor = false;
+
     //creacion de la camara
     public Camera camera;
 
@@ -43,6 +52,8 @@ public class cameraFollow : MonoBehaviour {
         //con esto el raton "siempre estará centrado en el centro de la pantalla"
         Cursor.lockState = CursorLockMode.Locked;
         playerMovement = GetComponent<PlayerMovement>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update ()
@@ -88,188 +99,227 @@ public class cameraFollow : MonoBehaviour {
                     {
                         // if () //En este if ira si el jugador tiene el ítem necesario para abrirlo, por ahora se abre siempre
                         whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlOpenDoor = true;
                     } else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.pasilloChildDoor)
                     {
-                        if (inventory.hasPasilloChildKey)
-                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlDoor(inventory.hasPasilloChildKey);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.banyo2Planta2)
                     {
-                        if (inventory.hasBanyo2Planta2Key)
-                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlDoor(inventory.hasBanyo2Planta2Key);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.sisterDoor)
                     {
                         whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlOpenDoor = true;
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.parentsDoor)
                     {
-                        if (inventory.hasTenazasKey)
-                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlDoor(inventory.hasTenazasKey);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.banyo1Planta2)
                     {
                         whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlOpenDoor = true;
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.recibidorDerecha)
                     {
-                        if (inventory.hasAxeKey)
-                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlDoor(inventory.hasAxeKey);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.recibidorIzquierda)
                     {
-                        if (inventory.hasGanzuaKey)
-                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlDoor(inventory.hasGanzuaKey);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.puertaSalon)
                     {
                         whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlOpenDoor = true;
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.puertaCocina)
                     {
                         whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlOpenDoor = true;
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.banyoPlanta1)
                     {
                         whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlOpenDoor = true;
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.puertaGaraje1)
                     {
-                        if (inventory.hasSalonBoxKey)
-                            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+                        controlDoor(inventory.hasSalonBoxKey);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.puertaGaraje2)
                     {
-                        if (inventory.hasAcidoKey)
+                        /*if (inventory.hasAcidoKey)
                         {
                             whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
                             if (candado != null)
                                 Destroy(candado);
-                        }
+                        }*/
+                        controlDoor(inventory.hasAcidoKey);
+                        if (candado != null)
+                            Destroy(candado);
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.ladder)
                     {
                         if (inventory.hasGanchoKey)
                             whatIHit.collider.gameObject.GetComponent<Doors>().controlLadder();
                     }
-                } else if (whatIHit.collider.tag == "ElementoClave")
+
+                }
+                else if (whatIHit.collider.tag == "ElementoClave")
                 {
                     if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.banyo2Planta2Key)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasBanyo2Planta2Key = true;
                         PlayerPrefs.SetInt("banyo2Planta2Key", 1);
                         infoText.text.text = "You have taken the key for the bathroom!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasBanyo2Planta2Key = true;
+                        controlKey("banyo2Planta2Key", "You have taken the key for the bathroom!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.childBoxKey)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasChildBoxKey = true;
                         PlayerPrefs.SetInt("childBoxKey", 1);
                         infoText.text.text = "You have taken the key for the box of your room!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasChildBoxKey = true;
+                        controlKey("childBoxKey", "You have taken the key for the box of your room!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.ganchoKey)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasGanchoKey = true;
                         PlayerPrefs.SetInt("ganchoKey", 1);
                         infoText.text.text = "You have taken a hook!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasGanchoKey = true;
+                        controlKey("ganchoKey", "You have taken a hook!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.tenazasKey)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasTenazasKey = true;
                         PlayerPrefs.SetInt("tenazasKey", 1);
                         infoText.text.text = "You have taken pincers!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasTenazasKey = true;
+                        controlKey("tenazasKey", "You have taken pincers!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.ganzuaKey)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasGanzuaKey = true;
                         PlayerPrefs.SetInt("ganzuaKey", 1);
                         infoText.text.text = "You have taken a lock pick!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasGanzuaKey = true;
+                        controlKey("ganzuaKey", "You have taken a lock pick!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.axeKey)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasAxeKey = true;
                         PlayerPrefs.SetInt("axeKey", 1);
                         infoText.text.text = "You have taken a axe!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasAxeKey = true;
+                        controlKey("axeKey", "You have taken a axe!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.boxSalonKey)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasBoxSalonKey = true;
                         PlayerPrefs.SetInt("boxSalonKey", 1);
                         infoText.text.text = "You have taken a key for the box of the living room!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasBoxSalonKey = true;
+                        controlKey("boxSalonKey", "You have taken a key for the box of the living room!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.boxBuhardillaKey)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasBoxBuhardillaKey = true;
                         PlayerPrefs.SetInt("boxBuhardillaKey", 1);
                         infoText.text.text = "You have taken a key for the attic!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasBoxBuhardillaKey = true;
+                        controlKey("boxBuhardillaKey", "You have taken a key for the attic!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.palancaKey)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasPalancaKey = true;
                         PlayerPrefs.SetInt("palancaKey", 1);
                         infoText.text.text = "You have taken a lever!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasPalancaKey = true;
+                        controlKey("palancaKey", "You have taken a lever!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.lantern)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         playerMovement.lanternTaked = true;
                         PlayerPrefs.SetInt("lantern", 1);
                         infoText.text.text = "You have taken the lantern!";
                         infoText.showText();
+                        /*----------------------------------------------*/
+                        playerMovement.lanternTaked = true;
+                        controlKey("lantern", "You have taken the lantern!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.carKeys)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasCarKeys = true;
                         //PlayerPrefs.SetInt("carKeys", 1);     Este objeto, al ser el último igual cunde no meterle autoguardado
                         infoText.text.text = "You have taken the car keys!";
                         infoText.showText();
+                        /*-----------------------------------------------*/
+                        inventory.hasCarKeys = true;
+                        controlKey("carKeys", "You have taken the car keys!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.salonBoxKey && inventory.salonBoxOpen)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasSalonBoxKey = true;
                         PlayerPrefs.SetInt("salonBoxKey", 1);
                         infoText.text.text = "You have taken a key for the living room!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasSalonBoxKey = true;
+                        controlKey("salonBoxKey", "You have taken a key for the living room!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.acidoKey && inventory.buhardillaBoxOpen)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasAcidoKey = true;
                         PlayerPrefs.SetInt("acidoKey", 1);
                         infoText.text.text = "You have taken an acid canister!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasAcidoKey = true;
+                        controlKey("acidoKey", "You have taken an acid canister!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.pasilloChildKey && inventory.childBoxOpen)
                     {
-                        Destroy(whatIHit.collider.gameObject);
+                        /*Destroy(whatIHit.collider.gameObject);
                         inventory.hasPasilloChildKey = true;
                         PlayerPrefs.SetInt("pasilloChildKey", 1);
                         infoText.text.text = "You have taken a key for the corridor!";
-                        infoText.showText();
+                        infoText.showText();*/
+                        inventory.hasPasilloChildKey = true;
+                        controlKey("pasilloChildKey", "You have taken a key for the corridor!");
                     }
                 } else if (whatIHit.collider.tag == "Caja")
                 {
                     if (whatIHit.collider.gameObject.GetComponent<Boxes>().whatBoxAmI == Boxes.Box.childBox)
                     {
+
+                        audioSource.clip = box;
+                        audioSource.Play();
+
                         if (inventory.hasChildBoxKey)
                         {
                             whatIHit.collider.gameObject.GetComponent<Boxes>().controlBox();
@@ -313,6 +363,45 @@ public class cameraFollow : MonoBehaviour {
                     }
                 }
             }
+
+            if (controlCloseDoor)
+            {
+                audioSource.clip = doorClose;
+                audioSource.Play();
+                controlCloseDoor = false;
             }
+            else if (controlOpenDoor)
+            {
+                audioSource.clip = doorOpen;
+                audioSource.Play();
+                controlOpenDoor = false;
+            }
+
         }
     }
+
+    public void controlDoor(bool hasObject)
+    {
+        if (hasObject)
+        {
+            whatIHit.collider.gameObject.GetComponent<Doors>().controlDoor();
+            controlOpenDoor = true;
+        }
+        else
+        {
+            controlCloseDoor = true;
+        }
+    }
+    
+    public void controlKey(string playerPrefs, string text)
+    {
+        Destroy(whatIHit.collider.gameObject);
+        PlayerPrefs.SetInt(playerPrefs, 1);
+        infoText.text.text = text;
+        infoText.showText();
+
+        audioSource.clip = key;
+        audioSource.Play();
+    }
+    
+}

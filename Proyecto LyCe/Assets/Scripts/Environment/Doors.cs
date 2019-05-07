@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Doors : MonoBehaviour {
-
+    
     public enum Door {childDoor, pasilloChildDoor, banyo2Planta2, sisterDoor, parentsDoor, banyo1Planta2, recibidorDerecha, recibidorIzquierda, puertaSalon, puertaCocina, banyoPlanta1, puertaGaraje1, puertaGaraje2, ladder }
     private bool opened = false, moving = false;
     public Door whatDoorAmI;
@@ -39,11 +39,13 @@ public class Doors : MonoBehaviour {
         {
             opened = true;
             anim.SetBool("Abierto", opened);
-        } else
+        }
+        else
         {
             opened = false;
             anim.SetBool("Abierto", opened);
         }
+        
         moving = true;
         coll.enabled = false;
     }

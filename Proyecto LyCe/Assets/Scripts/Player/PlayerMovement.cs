@@ -3,11 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
-    
+public class PlayerMovement : MonoBehaviour{
+
+    public AudioClip walkPJ;
+    public AudioClip runPJ;
+    AudioSource audioSource;
+
     public bool isCrouching; //Indica si esta agachado
 
     public bool isRunning;
+    
+    public bool walkSounds = false;
+    public bool walkingSounds = false;
+
+    public bool crouchSounds = false;
+    public bool crouchingSounds = false;
+
+    public bool runSounds = false;
+    public bool runningSounds = false;
 
     public GameObject eyes;
 
@@ -28,6 +41,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        audioSource = GetComponent<AudioSource>();
+
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
 
@@ -79,7 +94,7 @@ public class PlayerMovement : MonoBehaviour {
             moveDir = transform.TransformDirection(moveDir);
             moveDir = moveDir * speed;
             
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift)) //correr
             {
                 isRunning = true;
                 //posición de la camara "corriendo"
@@ -92,28 +107,44 @@ public class PlayerMovement : MonoBehaviour {
                     speed = r_speed;
                     anim.SetInteger("WalkDirection", 0);
                     anim.SetFloat("Velocity", 6f);
+
+                    runSounds = true;
+                    isRunningSounds();
                 }
                 else if (Input.GetKey(KeyCode.S)) //Si se mueve hacia detras
                 {
                     speed = w_speed;
                     anim.SetInteger("WalkDirection", 0);
                     anim.SetFloat("Velocity", -1f);
+
+                    runSounds = true;
+                    isRunningSounds();
                 }
                 else if (Input.GetKey(KeyCode.A))
                 { //Si se mueve hacia su izquierda
                     speed = l_speed;
                     anim.SetInteger("WalkDirection", 1);
+
+                    runSounds = true;
+                    isRunningSounds();
                 }
                 else if (Input.GetKey(KeyCode.D))
                 { //Si se mueve hacia su derecha
                     speed = l_speed;
                     anim.SetInteger("WalkDirection", 2);
+
+                    runSounds = true;
+                    isRunningSounds();
                 }
                 else //Si esta quieto
                 {
                     anim.SetFloat("Velocity", 0f);
                     anim.SetInteger("WalkDirection", 0);
+
+                    runSounds = false;
+                    isRunningSounds();
                 }
+
             }
 
             else
@@ -122,21 +153,27 @@ public class PlayerMovement : MonoBehaviour {
                 //posición de la camara cuando "no está corriendo"
                 //eyes.transform.position = eyes.transform.parent.TransformPoint(0, 0, 0);
 
-                if (isCrouching)
+                if (isCrouching) //esta agachado
                 {
                     //Controles agachado
                     if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) //Si se mueve
                     {
                         anim.SetInteger("WalkDirection", 0);
                         anim.SetFloat("Velocity", 1f);
+
+                        crouchSounds = true;
+                        isCrouchingSounds();
                     }
                     else //Si esta quieto
                     {
                         anim.SetInteger("WalkDirection", 0);
                         anim.SetFloat("Velocity", 0f);
+
+                        crouchSounds = false;
+                        isCrouchingSounds();
                     }
                 }
-                else if (!isCrouching)
+                else if (!isCrouching) //esta andando
                 {
                     speed = w_speed;
                     //Controles de pie
@@ -144,26 +181,41 @@ public class PlayerMovement : MonoBehaviour {
                     {
                         anim.SetInteger("WalkDirection", 0);
                         anim.SetFloat("Velocity", 1f);
+
+                        walkSounds = true;
+                        isWalkingSounds();
                     }
                     else if (Input.GetKey(KeyCode.S)) //Si se mueve hacia detras
                     {
                         anim.SetInteger("WalkDirection", 0);
                         anim.SetFloat("Velocity", -1f);
+
+                        walkSounds = true;
+                        isWalkingSounds();
                     }
                     else if (Input.GetKey(KeyCode.A)) //Si se mueve hacia su izquierda
                     {
                         speed = l_speed;
                         anim.SetInteger("WalkDirection", 1);
+
+                        walkSounds = true;
+                        isWalkingSounds();
                     }
                     else if (Input.GetKey(KeyCode.D)) //Si se mueve hacia su derecha
                     {
                         speed = l_speed;
                         anim.SetInteger("WalkDirection", 2);
+
+                        walkSounds = true;
+                        isWalkingSounds();
                     }
                     else //Si no se mueve
                     {
                         anim.SetInteger("WalkDirection", 0);
                         anim.SetFloat("Velocity", 0f);
+
+                        walkSounds = false;
+                        isWalkingSounds();
                     }
                 }
             }
@@ -173,6 +225,63 @@ public class PlayerMovement : MonoBehaviour {
         moveDir.y -= gravity * Time.deltaTime;
         controller.Move(moveDir * Time.deltaTime);
     }
+
+    public void isWalkingSounds()
+    {
+        if (walkSounds && !walkingSounds)
+        {
+            walkingSounds = true;
+            audioSource.clip = walkPJ;
+            audioSource.volume = 0.5f;
+            audioSource.Play();
+            audioSource.loop = true;
+        }
+        else if (!walkSounds && walkingSounds)
+        {
+            walkingSounds = false;
+            audioSource.loop = false;
+            audioSource.Stop();
+        }
+    }
+    
+    public void isCrouchingSounds()
+    {
+
+        if (crouchSounds && !crouchingSounds)
+        {
+            crouchingSounds = true;
+            audioSource.clip = walkPJ;
+            audioSource.volume = 0.1f;
+            audioSource.Play();
+            audioSource.loop = true;
+        }
+        else if (!crouchSounds && crouchingSounds)
+        {
+            crouchingSounds = false;
+            audioSource.loop = false;
+            audioSource.Stop();
+        }
+    }
+
+    public void isRunningSounds()
+    {
+
+        if (runSounds && !runningSounds)
+        {
+            runningSounds = true;
+            audioSource.clip = runPJ;
+            audioSource.volume = 1f;
+            audioSource.Play();
+            audioSource.loop = true;
+        }
+        else if (!runSounds && runningSounds)
+        {
+            runningSounds = false;
+            audioSource.loop = false;
+            audioSource.Stop();
+        }
+    }
+
 
     IEnumerator CameraDown()
     {
