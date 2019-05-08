@@ -63,7 +63,7 @@ public class enemyController : MonoBehaviour {
             viewRadius = 18;
         }
 
-        if (visibleTargets.Count>0)
+        if (visibleTargets.Count > 0)
         {
             if(distance > 5)
             {
@@ -88,6 +88,10 @@ public class enemyController : MonoBehaviour {
                 else
                 {
                     Debug.Log("has perdido");
+                    /*life_player.life = 100;
+
+                    life_player.c = Color.white;
+                    life_player.damageImage.color = life_player.c;*/
                 }
             }
             

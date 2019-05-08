@@ -14,7 +14,7 @@ public class life_player : MonoBehaviour {
     private int initial_life;
 
     private float actualTime = 0f;
-    private Color c;
+    [HideInInspector] public Color c, cR;
 
     // Use this for initialization
     void Start()
@@ -22,6 +22,7 @@ public class life_player : MonoBehaviour {
         initial_position = this.transform.position;
         initial_life = life;
         c = damageImage.color;
+        cR = damageImage.color;
     }
 	
 	// Update is called once per frame
@@ -54,5 +55,6 @@ public class life_player : MonoBehaviour {
         this.transform.position = initial_position;
         hud.FadeIn();
         life = initial_life;
+        damageImage.color = cR;
     }
 }
