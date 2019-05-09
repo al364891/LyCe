@@ -42,7 +42,7 @@ public class enemyController : MonoBehaviour {
         anim = GetComponent<Animator>();
 
         viewRadius = 18;
-        viewAngle = 60;
+        viewAngle = 190;
 	}
 	
 	// Update is called once per frame
