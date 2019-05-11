@@ -2518,7 +2518,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
@@ -4596,7 +4596,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
@@ -7481,7 +7481,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: fbba77394f190ad4eb57e4526dce7b20,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: fbba77394f190ad4eb57e4526dce7b20,
         type: 2}
@@ -10074,7 +10074,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
@@ -12881,7 +12881,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: fbba77394f190ad4eb57e4526dce7b20,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: fbba77394f190ad4eb57e4526dce7b20,
         type: 2}
@@ -13270,7 +13270,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
@@ -13744,7 +13744,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: fbba77394f190ad4eb57e4526dce7b20,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: fbba77394f190ad4eb57e4526dce7b20,
         type: 2}
@@ -16938,7 +16938,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e87f26b145630c944a1909ccf8262ea1, type: 2}
@@ -18150,7 +18150,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
@@ -18796,7 +18796,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
@@ -22964,7 +22964,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: fbba77394f190ad4eb57e4526dce7b20,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: fbba77394f190ad4eb57e4526dce7b20,
         type: 2}
@@ -23943,7 +23943,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
@@ -24754,7 +24754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1406531697
 Transform:
   m_ObjectHideFlags: 0
@@ -25535,7 +25535,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
@@ -30983,7 +30983,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
@@ -34553,19 +34553,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde4c3d5e75a76141aca243eee562dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasBanyo2Planta2Key: 1
-  hasChildBoxKey: 1
-  hasGanchoKey: 1
-  hasTenazasKey: 1
-  hasGanzuaKey: 1
-  hasAxeKey: 1
-  hasBoxSalonKey: 1
-  hasBoxBuhardillaKey: 1
-  hasPalancaKey: 1
-  hasSalonBoxKey: 1
-  hasAcidoKey: 1
-  hasPasilloChildKey: 1
-  hasCarKeys: 1
+  hasBanyo2Planta2Key: 0
+  hasChildBoxKey: 0
+  hasGanchoKey: 0
+  hasTenazasKey: 0
+  hasGanzuaKey: 0
+  hasAxeKey: 0
+  hasBoxSalonKey: 0
+  hasBoxBuhardillaKey: 0
+  hasPalancaKey: 0
+  hasSalonBoxKey: 0
+  hasAcidoKey: 0
+  hasPasilloChildKey: 0
+  hasCarKeys: 0
   childBoxOpen: 0
   salonBoxOpen: 0
   parentsBoxOpen: 0
@@ -35920,7 +35920,7 @@ Prefab:
     - target: {fileID: 108088793225926946, guid: e87f26b145630c944a1909ccf8262ea1,
         type: 2}
       propertyPath: m_Shadows.m_Bias
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e87f26b145630c944a1909ccf8262ea1, type: 2}
