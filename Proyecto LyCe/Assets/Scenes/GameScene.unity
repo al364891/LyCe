@@ -3273,12 +3273,12 @@ Prefab:
     - target: {fileID: 65555754549530420, guid: a944484d55bc7b14695ac2f83dfe2c0a,
         type: 2}
       propertyPath: m_Size.y
-      value: 8.400335
+      value: 8.802493
       objectReference: {fileID: 0}
     - target: {fileID: 65555754549530420, guid: a944484d55bc7b14695ac2f83dfe2c0a,
         type: 2}
       propertyPath: m_Center.y
-      value: -2.9126596
+      value: -3.1137385
       objectReference: {fileID: 0}
     - target: {fileID: 1079841448991402, guid: a944484d55bc7b14695ac2f83dfe2c0a, type: 2}
       propertyPath: m_Layer
@@ -24754,7 +24754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1406531697
 Transform:
   m_ObjectHideFlags: 0
@@ -34555,7 +34555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBanyo2Planta2Key: 0
   hasChildBoxKey: 0
-  hasGanchoKey: 0
+  hasGanchoKey: 1
   hasTenazasKey: 0
   hasGanzuaKey: 0
   hasAxeKey: 0
