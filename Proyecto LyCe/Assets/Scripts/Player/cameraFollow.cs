@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class cameraFollow : MonoBehaviour {
 
-    public AudioClip doorOpen;
-    public AudioClip doorClose;
-    public AudioClip key;
-    public AudioClip box;
-    AudioSource audioSource;
+    public AudioSource audioDoorOpen;
+    public AudioSource audioDoorClose;
+    public AudioSource audioKey;
+    public AudioSource audioBox;
+    //AudioSource audioSource;
+
+    public AudioSource audioUnlocked;
 
     bool controlCloseDoor = false;
     bool controlOpenDoor = false;
@@ -52,8 +54,7 @@ public class cameraFollow : MonoBehaviour {
         //con esto el raton "siempre estará centrado en el centro de la pantalla"
         Cursor.lockState = CursorLockMode.Locked;
         playerMovement = GetComponent<PlayerMovement>();
-
-        audioSource = GetComponent<AudioSource>();
+        
     }
 
     void Update ()
@@ -159,7 +160,11 @@ public class cameraFollow : MonoBehaviour {
                         }*/
                         controlDoor(inventory.hasAcidoKey);
                         if (candado != null)
+                        {
                             Destroy(candado);
+                            audioUnlocked.Play();
+                        }
+                            
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<Doors>().whatDoorAmI == Doors.Door.ladder)
                     {
@@ -317,8 +322,8 @@ public class cameraFollow : MonoBehaviour {
                     if (whatIHit.collider.gameObject.GetComponent<Boxes>().whatBoxAmI == Boxes.Box.childBox)
                     {
 
-                        audioSource.clip = box;
-                        audioSource.Play();
+                        //audioBox.clip = box;
+                        audioBox.Play();
 
                         if (inventory.hasChildBoxKey)
                         {
@@ -366,14 +371,14 @@ public class cameraFollow : MonoBehaviour {
 
             if (controlCloseDoor)
             {
-                audioSource.clip = doorClose;
-                audioSource.Play();
+                //audioSource.clip = doorClose;
+                audioDoorClose.Play();
                 controlCloseDoor = false;
             }
             else if (controlOpenDoor)
             {
-                audioSource.clip = doorOpen;
-                audioSource.Play();
+                //audioSource.clip = doorOpen;
+                audioDoorOpen.Play();
                 controlOpenDoor = false;
             }
 
@@ -400,8 +405,8 @@ public class cameraFollow : MonoBehaviour {
         infoText.text.text = text;
         infoText.showText();
 
-        audioSource.clip = key;
-        audioSource.Play();
+        //audioSource.clip = key;
+        audioKey.Play();
     }
     
 }

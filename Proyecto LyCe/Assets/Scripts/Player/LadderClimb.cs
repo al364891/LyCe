@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LadderClimb : MonoBehaviour {
 
+    public AudioSource audioLadder;
+
     public Transform ChController;
     public bool inside = false;
     private float heightFactor = 10f;
@@ -27,8 +29,17 @@ public class LadderClimb : MonoBehaviour {
             if (!animacion)
             {
                 animacion = true;
+                audioLadder.loop = true;
+                playerMovement.audioWalkPJ.Stop();
+                playerMovement.audioRunPJ.Stop();
+                audioLadder.Play();
+                
                 playerMovement.anim.SetBool("Ladder", animacion);
             }
+        }
+        else
+        {
+            audioLadder.Stop();
         }
     }
 

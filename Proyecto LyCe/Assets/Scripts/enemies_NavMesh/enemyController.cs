@@ -6,6 +6,17 @@ using UnityEngine.AI;
 public class enemyController : MonoBehaviour {
     //ESTE SCRIPT: es para el radio en el que te puede "ver" el padre
 
+    //public AudioSource enemyWalk;
+    public AudioSource enemySound;
+    public int timeEnemySound;
+    bool time = false;
+    bool seeYou = false;
+
+    public AudioSource hit1;
+    public AudioSource hit2;
+    bool hit = false;
+    public float wait_damage_sound_seconds;
+
     IA IA;
     public GameObject enemy;
     life_player life_player;
@@ -82,6 +93,7 @@ public class enemyController : MonoBehaviour {
                     {
                         //Damage();
                         StartCoroutine(Damage_enemy());
+                        StartCoroutine(Damage_enemy_sound()); 
                         Debug.Log("vida: " + life_player.life);
                     }
                 }
@@ -101,7 +113,7 @@ public class enemyController : MonoBehaviour {
             IA.enemy.SetDestination(IA.pDestino);
         }
 	}
-
+    
     void FindVisibleTargets()
     {
         visibleTargets.Clear();
@@ -118,6 +130,19 @@ public class enemyController : MonoBehaviour {
                 if (!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
                 {
                     visibleTargets.Add(target);
+                    if (!time && !seeYou)
+                    {
+                        seeYou = true;
+                        StartCoroutine(Time_Sound());
+                    }
+                    
+                }
+            }
+            else
+            {
+                if (seeYou)
+                {
+                    seeYou = false;
                 }
             }
         }
@@ -143,6 +168,14 @@ public class enemyController : MonoBehaviour {
         Gizmos.DrawLine(transform.position, transform.position + viewAngleA * viewRadius);
         Gizmos.DrawLine(transform.position, transform.position + viewAngleB * viewRadius);
     }
+    
+    IEnumerator Time_Sound()
+    {
+        enemySound.Play();
+        time = true;
+        yield return new WaitForSeconds(timeEnemySound);
+        time = false;
+    }
 
     IEnumerator Damage_enemy()
     {
@@ -154,4 +187,22 @@ public class enemyController : MonoBehaviour {
         anim.SetBool("Attacking", false);
         salida = true;
     }
+
+    IEnumerator Damage_enemy_sound()
+    {
+        yield return new WaitForSeconds(wait_damage_sound_seconds);
+
+        if (hit)
+        {
+            hit = false;
+            hit1.Play();
+        }
+        else
+        {
+            hit = true;
+            hit2.Play();
+        }
+        
+    }
+
 }

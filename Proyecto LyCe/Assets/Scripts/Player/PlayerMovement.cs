@@ -6,8 +6,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour{
 
     public AudioClip walkPJ;
-    public AudioClip runPJ;
-    AudioSource audioSource;
+    public AudioClip RunPJ;
+    public AudioSource audioWalkPJ;
+    public AudioSource audioRunPJ;
+    //AudioSource audioSource;
+
+    public AudioSource lanternFail;
 
     public bool isCrouching; //Indica si esta agachado
 
@@ -21,7 +25,7 @@ public class PlayerMovement : MonoBehaviour{
 
     public bool runSounds = false;
     public bool runningSounds = false;
-
+    
     public GameObject eyes;
 
     private float speed; //Variable donde se guarda la velocidad de cada momento
@@ -41,7 +45,8 @@ public class PlayerMovement : MonoBehaviour{
 
 	// Use this for initialization
 	void Start () {
-        audioSource = GetComponent<AudioSource>();
+        audioWalkPJ.clip = walkPJ;
+        audioRunPJ.clip = RunPJ;
 
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
@@ -225,22 +230,63 @@ public class PlayerMovement : MonoBehaviour{
         moveDir.y -= gravity * Time.deltaTime;
         controller.Move(moveDir * Time.deltaTime);
     }
+    
+    /*
+    public void soundsPJ()
+    {
+        if (isRunning && !runSounds)
+        {
+            if (walkSounds)
+            {
+                audioWalkPJ.Stop();
+                walkSounds = false;
 
+                audioRunPJ.loop = true;
+                audioRunPJ.Play();
+                runSounds = true;
+            }
+            
+            
+        }
+        else{
+            if (runSounds)
+            {
+                audioRunPJ.Stop();
+                runSounds = false;
+            }
+
+            if (isCrouching && !walkSounds)
+            {
+                audioWalkPJ.volume = 0.1f;
+            }
+            else{
+                audioWalkPJ.volume = 0.5f;
+            }
+
+            audioWalkPJ.Play();
+            walkSounds = true;
+        }
+    }
+    */
+
+    
     public void isWalkingSounds()
     {
         if (walkSounds && !walkingSounds)
         {
+            crouchingSounds = false;
+            runningSounds = false;
             walkingSounds = true;
-            audioSource.clip = walkPJ;
-            audioSource.volume = 0.5f;
-            audioSource.Play();
-            audioSource.loop = true;
+            audioWalkPJ.volume = 0.5f;
+            audioRunPJ.Stop();
+            audioWalkPJ.Play();
+            audioWalkPJ.loop = true;
         }
         else if (!walkSounds && walkingSounds)
         {
             walkingSounds = false;
-            audioSource.loop = false;
-            audioSource.Stop();
+            audioWalkPJ.loop = false;
+            audioWalkPJ.Stop();
         }
     }
     
@@ -249,40 +295,43 @@ public class PlayerMovement : MonoBehaviour{
 
         if (crouchSounds && !crouchingSounds)
         {
+            walkingSounds = false;
+            runningSounds = false;
             crouchingSounds = true;
-            audioSource.clip = walkPJ;
-            audioSource.volume = 0.1f;
-            audioSource.Play();
-            audioSource.loop = true;
+            audioWalkPJ.volume = 0.1f;
+            audioRunPJ.Stop();
+            audioWalkPJ.Play();
+            audioWalkPJ.loop = true;
         }
         else if (!crouchSounds && crouchingSounds)
         {
             crouchingSounds = false;
-            audioSource.loop = false;
-            audioSource.Stop();
+            audioWalkPJ.loop = false;
+            audioWalkPJ.Stop();
         }
     }
-
+    
     public void isRunningSounds()
     {
 
         if (runSounds && !runningSounds)
         {
+            walkingSounds = false;
+            crouchingSounds = false;
             runningSounds = true;
-            audioSource.clip = runPJ;
-            audioSource.volume = 1f;
-            audioSource.Play();
-            audioSource.loop = true;
+            audioRunPJ.volume = 1f;
+            audioWalkPJ.Stop();
+            audioRunPJ.Play();
+            audioRunPJ.loop = true;
         }
         else if (!runSounds && runningSounds)
         {
             runningSounds = false;
-            audioSource.loop = false;
-            audioSource.Stop();
+            audioRunPJ.loop = false;
+            audioRunPJ.Stop();
         }
     }
-
-
+    
     IEnumerator CameraDown()
     {
         float currentTime = 0.0f;
@@ -339,6 +388,12 @@ public class PlayerMovement : MonoBehaviour{
             lightOn = false;
             lanternTaked = false;
             StartCoroutine(parpadeoLuz());
+
+            if (!lantern.enabled)
+            {
+                lanternFail.Play();
+            }
+
         }
     }
 
