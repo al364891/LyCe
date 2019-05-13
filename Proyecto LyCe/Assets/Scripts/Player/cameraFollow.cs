@@ -183,7 +183,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken the key for the bathroom!";
                         infoText.showText();*/
                         inventory.hasBanyo2Planta2Key = true;
-                        controlKey("banyo2Planta2Key", "You have taken the key for the bathroom!");
+                        controlKey("banyo2Planta2Key", "Mmmm, a key. What can it open?");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.childBoxKey)
                     {
@@ -193,7 +193,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken the key for the box of your room!";
                         infoText.showText();*/
                         inventory.hasChildBoxKey = true;
-                        controlKey("childBoxKey", "You have taken the key for the box of your room!");
+                        controlKey("childBoxKey", "This key should be for my room box.");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.ganchoKey)
                     {
@@ -203,7 +203,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken a hook!";
                         infoText.showText();*/
                         inventory.hasGanchoKey = true;
-                        controlKey("ganchoKey", "You have taken a hook!");
+                        controlKey("ganchoKey", "I can put down the stairs of the attic.");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.tenazasKey)
                     {
@@ -213,7 +213,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken pincers!";
                         infoText.showText();*/
                         inventory.hasTenazasKey = true;
-                        controlKey("tenazasKey", "You have taken pincers!");
+                        controlKey("tenazasKey", "Maybe I can force some door with the pincers.");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.ganzuaKey)
                     {
@@ -223,7 +223,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken a lock pick!";
                         infoText.showText();*/
                         inventory.hasGanzuaKey = true;
-                        controlKey("ganzuaKey", "You have taken a lock pick!");
+                        controlKey("ganzuaKey", "This lock pick would be very useful.");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.axeKey)
                     {
@@ -233,7 +233,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken a axe!";
                         infoText.showText();*/
                         inventory.hasAxeKey = true;
-                        controlKey("axeKey", "You have taken a axe!");
+                        controlKey("axeKey", "I will bring down the kitchen door.");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.boxSalonKey)
                     {
@@ -243,7 +243,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken a key for the box of the living room!";
                         infoText.showText();*/
                         inventory.hasBoxSalonKey = true;
-                        controlKey("boxSalonKey", "You have taken a key for the box of the living room!");
+                        controlKey("boxSalonKey", "Wasn't it a box on the living room?");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.boxBuhardillaKey)
                     {
@@ -253,7 +253,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken a key for the attic!";
                         infoText.showText();*/
                         inventory.hasBoxBuhardillaKey = true;
-                        controlKey("boxBuhardillaKey", "You have taken a key for the attic!");
+                        controlKey("boxBuhardillaKey", "Another box key, this should be for the attic one.");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.palancaKey)
                     {
@@ -263,7 +263,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken a lever!";
                         infoText.showText();*/
                         inventory.hasPalancaKey = true;
-                        controlKey("palancaKey", "You have taken a lever!");
+                        controlKey("palancaKey", "Time to take down some door.");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.lantern)
                     {
@@ -274,7 +274,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.showText();
                         /*----------------------------------------------*/
                         playerMovement.lanternTaked = true;
-                        controlKey("lantern", "You have taken the lantern!");
+                        controlKey("lantern", "This lantern will be very useful.");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.carKeys)
                     {
@@ -285,7 +285,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.showText();
                         /*-----------------------------------------------*/
                         inventory.hasCarKeys = true;
-                        controlKey("carKeys", "You have taken the car keys!");
+                        controlKey("carKeys", "Oh god, the car keys, this is my ticket to leave this house!");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.salonBoxKey && inventory.salonBoxOpen)
                     {
@@ -295,7 +295,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken a key for the living room!";
                         infoText.showText();*/
                         inventory.hasSalonBoxKey = true;
-                        controlKey("salonBoxKey", "You have taken a key for the living room!");
+                        controlKey("salonBoxKey", "This key should be for the living room.");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.acidoKey && inventory.buhardillaBoxOpen)
                     {
@@ -305,7 +305,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken an acid canister!";
                         infoText.showText();*/
                         inventory.hasAcidoKey = true;
-                        controlKey("acidoKey", "You have taken an acid canister!");
+                        controlKey("acidoKey", "I could use this to open the padlock that I have seen before.");
                     }
                     else if (whatIHit.collider.gameObject.GetComponent<KeyObjects>().whatKeyIPick == KeyObjects.KeyObject.pasilloChildKey && inventory.childBoxOpen)
                     {
@@ -315,7 +315,7 @@ public class cameraFollow : MonoBehaviour {
                         infoText.text.text = "You have taken a key for the corridor!";
                         infoText.showText();*/
                         inventory.hasPasilloChildKey = true;
-                        controlKey("pasilloChildKey", "You have taken a key for the corridor!");
+                        controlKey("pasilloChildKey", "It's time to explore where I am.");
                     }
                 } else if (whatIHit.collider.tag == "Caja")
                 {

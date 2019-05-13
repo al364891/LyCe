@@ -383,7 +383,7 @@ public class PlayerMovement : MonoBehaviour{
     private void estropearLinterna()
     {
         float valor = UnityEngine.Random.Range(0.0f, 1.0f);
-        if (valor < 0.001f)
+        if (valor < 0.00025f)
         {
             lightOn = false;
             lanternTaked = false;
