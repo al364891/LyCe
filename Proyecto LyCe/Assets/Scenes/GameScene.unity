@@ -785,7 +785,7 @@ MonoBehaviour:
     m_Bits: 2048
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   visibleTargets: []
   playerMovement: {fileID: 1058788156}
 --- !u!114 &52611544
@@ -17802,7 +17802,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1863747247}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &857451477
 MeshRenderer:
@@ -20356,8 +20356,8 @@ GameObject:
   m_Name: SegundaPlanta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1021752300
 Transform:
@@ -20369,10 +20369,9 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 16, z: 100}
   m_LocalScale: {x: 100, y: 100, z: 100}
-  m_Children:
-  - {fileID: 1792678990}
+  m_Children: []
   m_Father: {fileID: 1863747247}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1021752301
 MeshRenderer:
@@ -26388,7 +26387,7 @@ Transform:
   - {fileID: 1789017837}
   - {fileID: 1669348370}
   m_Father: {fileID: 1863747247}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1389725757
 Prefab:
@@ -35190,12 +35189,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792678989}
-  m_LocalRotation: {x: -0.49954736, y: -0, z: -0, w: 0.8662866}
-  m_LocalPosition: {x: 0, y: 1.341, z: -0.144}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.96579045, y: -0, z: -0, w: 0.25932372}
+  m_LocalPosition: {x: 0, y: 1.5999908, z: -34.099976}
+  m_LocalScale: {x: 100, y: 99.999985, z: 99.99997}
   m_Children: []
-  m_Father: {fileID: 1021752300}
-  m_RootOrder: 0
+  m_Father: {fileID: 1863747247}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -59.940002, y: 0, z: 0}
 --- !u!65 &1792678991
 BoxCollider:
@@ -36314,6 +36313,7 @@ Transform:
   - {fileID: 531756400}
   - {fileID: 1897569709}
   - {fileID: 711089593}
+  - {fileID: 1792678990}
   - {fileID: 1021752300}
   - {fileID: 857451476}
   - {fileID: 2015697520}
@@ -36627,7 +36627,7 @@ GameObject:
   m_Name: PlantaBaja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1897569709
@@ -40236,7 +40236,7 @@ Transform:
   - {fileID: 732376366}
   - {fileID: 414535425}
   m_Father: {fileID: 1863747247}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2022352886
 GameObject:

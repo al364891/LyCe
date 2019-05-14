@@ -100,7 +100,7 @@ public class IA : MonoBehaviour
         }
         else
         {
-            if (Vector3.Distance(enemy.transform.position,pDestino) <= 5)
+            if (Vector3.Distance(enemy.transform.position,pDestino) <= 7)
             {
                 pAux = pDestino;
                 puntosUtiles.RemoveAt(0);
