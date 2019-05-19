@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/USER/Desktop/Build final/Your Home.exe
+C:/Users/Marc/Desktop/Build/Your Home.exe
 SceneListBegin?
 Assets/Scenes/MenúPrincipal.unity
 Assets/Scenes/GameScene.unity
