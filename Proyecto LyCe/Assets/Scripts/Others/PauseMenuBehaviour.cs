@@ -17,12 +17,6 @@ public class PauseMenuBehaviour : MonoBehaviour
     public PlayerMovement playerMovement;
     public cameraFollow cameraFollow;
 
-    // Use this for initialization
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -112,7 +106,7 @@ public class PauseMenuBehaviour : MonoBehaviour
         playerMovement.enabled = true;
         cameraFollow.enabled = true;
         pause = false;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void volumenFunc()

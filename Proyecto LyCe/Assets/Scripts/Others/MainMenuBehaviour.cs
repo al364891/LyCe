@@ -11,16 +11,6 @@ public class MainMenuBehaviour : MonoBehaviour {
 
     public Image blackScreen;
 
-	// Use this for initialization
-	void Start () {
-        // Aqui podemos usar un DontDestroyOnLoad para conservar el audio manager
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void newGameFunc()
     {
         Debug.Log("newGame");
@@ -127,6 +117,6 @@ public class MainMenuBehaviour : MonoBehaviour {
             yield return null;
         }
         blackScreen.GetComponent<Image>().color = finalColor;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

@@ -1,9 +1,9 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Fran/Desktop/motores/Proyecto LyCe.exe
+C:/Users/USER/Desktop/Build final/Your Home.exe
 SceneListBegin?
-Assets/Scenes/GameScene.unity
 Assets/Scenes/MenúPrincipal.unity
+Assets/Scenes/GameScene.unity
 SceneListEnd?
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 7b803eb2910e9b4cd5e521ae07b9f7d6 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
@@ -90,7 +90,7 @@ e90403eeda069970e0b9de1533de13a6 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 2d58ca16854b99daea8c45e9c0f367b7 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 16da51d1b62ef6d4ee1849350434023b UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 13707094e0369f394725947dc1bc3232 Assembly-CSharp.dll:.PauseMenuBehaviour
-d8e2c000f39be001945ae18e0f2b192c Assembly-CSharp.dll:.PlayerMovement
+67fc7cde3a7fc0c74bce1f53d16c61d4 Assembly-CSharp.dll:.PlayerMovement
 486cd95c82d8305219c352c06b776e1f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9e61f3535f3c55760a1cedfbd114f4af UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 754551afe4f2531f58476bf14c510657 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -119,7 +119,7 @@ da21fc3f8056b1f91c3dd09c7bf4f90a UnityEngine.Networking.dll:UnityEngine.Networki
 fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 7ca56e063bd071986fff4f513cc4f477 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-bf999ade667e174ba8e895df1a62c766 Assembly-CSharp.dll:.enemyController
+5906602a9e5764e0c8cd1883d295de28 Assembly-CSharp.dll:.enemyController
 22d6f3a75c6ef21286b46c92f60a1fca Assembly-CSharp.dll:.MainMenuBehaviour
 382b8ef512fa8d6108723a01b57af65b UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 d22c788799ee45d8676254eccf20e8b8 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
@@ -131,10 +131,10 @@ dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 96f3ea9f23b6f08e60710ebb4af49174 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 007127c40eeefb0bd113b36424415f0c Assembly-CSharp.dll:.Inventory
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
-1bd3031f14b1f791f2e25a9d2024806c Assembly-CSharp.dll:.cameraFollow
+24a124462e888d5f225c3bcef84abf09 Assembly-CSharp.dll:.cameraFollow
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
-4cff7a5754c817d21ed9cc72546e8ca8 Assembly-CSharp.dll:.LadderClimb
-b8c8614d2e1e579ca1bc9f70df32ad4c Assembly-CSharp.dll:.life_player
+5950b3df63710f3ad0a56ebf21f7e850 Assembly-CSharp.dll:.LadderClimb
+fa39e8145238a9dcc03de11cfb576d5f Assembly-CSharp.dll:.life_player
 eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 486cd95c82d8305219c352c06b776e1f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour

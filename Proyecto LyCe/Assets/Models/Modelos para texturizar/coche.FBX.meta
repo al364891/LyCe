@@ -26,6 +26,27 @@ ModelImporter:
     2100036: Material.062
     2100038: Material.063
     2100040: Material.050
+    2100042: Material
+    2100044: Material.024
+    2100046: Material.010
+    2100048: Material.003
+    2100050: Material.002
+    2100052: Material.001
+    2100054: Material.004
+    2100056: Material.009
+    2100058: Material.007
+    2100060: Material.006
+    2100062: Material.005
+    2100064: Material.008
+    2100066: Material.013
+    2100068: Material.014
+    2100070: Material.015
+    2100072: Material.016
+    2100074: Material.017
+    2100076: Material.018
+    2100078: Material.021
+    2100080: Material.025
+    2100082: Material.026
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
@@ -82,7 +103,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.0254
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
